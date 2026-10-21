@@ -1,173 +1,931 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>موقع اللجنة العلمية - مدرسة ذكور زيتا جماعين الثانوية</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-*{font-family:'Tajawal',sans-serif;box-sizing:border-box;margin:0;padding:0}
-body{background:#f0f7ff;color:#0f172a}
-.top-bar{background:#0b3d5f;color:white;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
-.top-bar .left{opacity:.9}
-.nav{background:#0e4a73;display:flex;gap:18px;padding:10px 20px;color:white;font-size:13px;justify-content:center}
-.nav span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:20px}
-.hero{position:relative;background:linear-gradient(rgba(10,40,70,.75),rgba(10,40,70,.6)),url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1500');background-size:cover;background-position:center;color:white;padding:40px 20px 60px;text-align:center}
-.hero .flag{position:absolute;right:0;top:0;width:180px;opacity:.95}
-.hero h1{font-size:34px;font-weight:900;margin:0}
-.hero h2{font-size:16px;font-weight:400;margin-top:6px;opacity:.9}
-.hero p{margin-top:8px;font-size:13px;opacity:.85}
-.btn-green{background:linear-gradient(135deg,#1a936f,#2ec4b6);color:white;padding:8px 20px;border-radius:25px;text-decoration:none;font-weight:800;font-size:13px;display:inline-block;margin-top:12px}
-.info-bar{background:white;border-radius:0 0 30px 30px;margin:-30px 20px 0;box-shadow:0 10px 30px rgba(0,0,0,.1);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;overflow:hidden;position:relative;z-index:2}
-.info-bar div{padding:18px 14px;text-align:center;border-left:1px solid #eef2f7;font-size:11px;line-height:1.8;color:#475569}
-.info-bar div b{color:#0f4c75;font-size:13px;display:block;margin-bottom:4px}
-.section-title{text-align:center;margin:30px 0 16px;font-size:22px;font-weight:900;color:#0f4c75}
-.grid5{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;padding:0 20px}
-.card-dept{border-radius:16px;padding:16px;text-align:center;color:#0f172a;position:relative;overflow:hidden}
-.card-dept h3{font-size:15px;margin:8px 0 6px}
-.card-dept p{font-size:11px;line-height:1.7;color:#334155}
-.card-dept .btn-mini{margin-top:10px;padding:5px 12px;border-radius:20px;font-size:11px;color:white;display:inline-block;text-decoration:none;font-weight:700}
-.bg-math{background:linear-gradient(180deg,#e6f9f0,#b7f0d0)} .bg-math .btn-mini{background:#1a936f}
-.bg-phys{background:linear-gradient(180deg,#e6f3ff,#b8dcff)} .bg-phys .btn-mini{background:#0ea5e9}
-.bg-chem{background:linear-gradient(180deg,#fff2e0,#ffcc8a)} .bg-chem .btn-mini{background:#f59e0b}
-.bg-bio{background:linear-gradient(180deg,#fde6ff,#f0aaff)} .bg-bio .btn-mini{background:#a855f7}
-.bg-sci{background:linear-gradient(180deg,#e6ffe6,#a8f0a8)} .bg-sci .btn-mini{background:#16a34a}
-.lab-section{background:linear-gradient(180deg,#f0f7ff,#ffffff);margin:20px;border-radius:18px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.05)}
-.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:12px}
-.lab-item{background:white;border-radius:12px;padding:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04);font-size:11px}
-.lab-item i{font-size:22px;color:#0f4c75;display:block;margin-bottom:6px}
-.lab-main{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:white;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px}
-.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;padding:0 20px}
-@media(max-width:800px){.two-col{grid-template-columns:1fr}}
-.box{background:white;border-radius:16px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.05)}
-.input{width:100%;padding:9px;border-radius:8px;border:1px solid #e2e8f0;margin:5px 0;font-size:12px}
-.btn-send{background:#0f4c75;color:white;padding:10px;border-radius:10px;border:0;width:100%;font-weight:800;cursor:pointer}
-.gallery3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gallery3 .g{border-radius:10px;overflow:hidden;background:white;box-shadow:0 2px 8px rgba(0,0,0,.06);font-size:10px;text-align:center}
-.gallery3 .g img{width:100%;height:80px;object-fit:cover}
-.footer{background:linear-gradient(135deg,#0f172a,#0b3d5f);color:#cbd5e1;padding:18px 20px;font-size:11px;text-align:center;margin-top:20px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع اللجنة العلمية - مدرسة ذكور زيتا جماعين الثانوية</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        physics: '#0ea5e9',
+                        chemistry: '#a855f7',
+                        biology: '#10b981',
+                        math: '#f59e0b',
+                        science: '#06b6d4',
+                        palestineRed: '#ee2a35',
+                        palestineGreen: '#007a3d',
+                        palestineBlack: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(15, 76, 117, 0.1) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .tab-btn.active {
+            border-bottom: 3px solid currentColor;
+            font-weight: 800;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    </style>
 </head>
-<body>
+<body class="bg-slate-50 min-h-screen flex flex-col justify-between selection:bg-teal-500 selection:text-white">
 
-<div class="top-bar">
-<div>دولة فلسطين<br>وزارة التربية والتعليم العالي<br>مديرية التربية والتعليم - سلفيت<br>مدرسة ذكور زيتا جماعين الثانوية</div>
-<div class="left">🇵🇸</div>
-</div>
-<div class="nav">
-<span><i class="fa fa-home"></i> الرئيسية</span>
-<span>عن اللجنة</span>
-<span>الأقسام</span>
-<span>المحاكاة والتجارب</span>
-<span>المسابقة الأسبوعية</span>
-<span>أعمال الطلبة</span>
-<span>اتصل بنا</span>
-</div>
+    <!-- Header & Official Banner -->
+    <header class="relative bg-gradient-to-r from-cyan-900 via-teal-800 to-emerald-900 text-white overflow-hidden shadow-xl">
+        <div class="absolute inset-0 opacity-10 bg-grid-pattern"></div>
+        <!-- Palestinian Decorative Symbols Background -->
+        <div class="absolute -left-10 top-0 text-white/5 text-9xl font-black select-none pointer-events-none">∑ π</div>
+        <div class="absolute -right-10 bottom-0 text-white/5 text-9xl font-black select-none pointer-events-none">E=mc²</div>
 
-<div class="hero">
-<img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" style="position:absolute;right:-20px;top:20px;width:120px;transform:rotate(-8deg);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.3)">
-<h1>موقع اللجنة العلمية ⚛️</h1>
-<h2>في مدرسة ذكور زيتا جماعين الثانوية</h2>
-<p>معاً نحو جيل علمي مبدع يصنع المستقبل - أرض العلم والتاريخ والإبداع ... فلسطين</p>
-<a class="btn-green" href="#labs">اكتشف - جرب - تعلم <i class="fa fa-play"></i></a>
-</div>
+        <div class="max-w-7xl mx-auto px-4 py-8 relative z-10">
+            <!-- Header Top Info -->
+            <div class="flex flex-wrap justify-between items-center text-center sm:text-right border-b border-white/10 pb-6 mb-6 gap-4">
+                <div class="space-y-1">
+                    <div class="flex items-center justify-center sm:justify-start gap-2 text-xs font-bold tracking-wide text-emerald-300">
+                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                        <span>دولة فلسطين - وزارة التربية والتعليم العالي</span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-200">مديرية التربية والتعليم - سلفيت</h4>
+                    <h3 class="text-lg font-bold text-amber-300">مدرسة ذكور زيتا جماعين الثانوية</h3>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 text-center mx-auto sm:mx-0">
+                    <div class="text-xs text-emerald-200 mb-1">الرؤية والرسالة العلمية</div>
+                    <div class="text-sm sm:text-base font-extrabold text-white">"معاً نحو جيل علمي مبدع يصنع المستقبل"</div>
+                </div>
+            </div>
 
-<div class="info-bar">
-<div><b><i class="fa fa-eye"></i> رؤية المدرسة</b> مدرسة رائدة في التعليم والإبداع، تُعدّ شخوص الطالب علمياً وخلقياً، وتبني جيلاً مفكراً ناقداً ونافعاً وخدمة المجتمع</div>
-<div><b><i class="fa fa-lightbulb"></i> رؤية اللجنة العلمية</b> أن تكون اللجنة العلمية منصة للابتكار والاستكشاف، تزرع البصيرة العلمية وتنمي المهارات العملية وتعز حب البحث العلمي لدى الطلبة</div>
-<div><b><i class="fa fa-file-lines"></i> خطة اللجنة العلمية</b></div>
-<div><b><i class="fa fa-bullseye"></i> أهداف اللجنة العلمية</b></div>
-<div><b><i class="fa fa-graduation-cap"></i> إعداد معلمات اللجنة العلمية</b> في مدرسة ذكور زيتا جماعين الثانوية</div>
-</div>
+            <!-- Main Title Section -->
+            <div class="text-center py-4">
+                <div class="inline-flex items-center gap-3 bg-white/15 px-6 py-2 rounded-full border border-white/20 mb-4 shadow-inner">
+                    <span class="animate-pulse text-xl">🔬</span>
+                    <span class="font-bold text-sm tracking-wider text-teal-100">الموقع الإلكتروني الرسمي</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-emerald-200">
+                    بوابة اللجنة العلمية الإبداعية
+                </h1>
+                <p class="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto font-normal">
+                    منصة تعليمية تفاعلية تهدف إلى الربط بين المناهج الفلسطينية والمختبرات الافتراضية والمسابقات العلمية الإبداعية.
+                </p>
+            </div>
+        </div>
+    </header>
 
-<div class="section-title">أقسام اللجنة العلمية ⚛️</div>
-<div class="grid5">
-<div class="card-dept bg-math"><i class="fa fa-calculator" style="font-size:28px;color:#1a936f"></i><h3>الرياضيات</h3><p>المنطق - البرهان - التفاضل<br>التكامل - الإبداع</p><a class="btn-mini" href="#">استعرض القسم <i class="fa fa-arrow-left"></i></a></div>
-<div class="card-dept bg-phys"><i class="fa fa-atom" style="font-size:28px;color:#0ea5e9"></i><h3>الفيزياء</h3><p>الحركة - القوى - الطاقة<br>السقوط الحر - العزم</p><a class="btn-mini" href="#">استعرض القسم</a></div>
-<div class="card-dept bg-chem"><i class="fa fa-flask" style="font-size:28px;color:#f59e0b"></i><h3>الكيمياء</h3><p>التفاعلات - الجدول الدوري<br>سلسلة النشاط الكيميائي</p><a class="btn-mini" href="#">استعرض القسم</a></div>
-<div class="card-dept bg-bio"><i class="fa fa-dna" style="font-size:28px;color:#a855f7"></i><h3>الأحياء</h3><p>الخلية - الوراثة - الأجهزة الدقيقة<br>أجهزة الجسم</p><a class="btn-mini" href="#">استعرض القسم</a></div>
-<div class="card-dept bg-sci"><i class="fa fa-globe" style="font-size:28px;color:#16a34a"></i><h3>العلوم العامة</h3><p>البيئة - الفضاء - الطاقة<br>جسم الإنسان</p><a class="btn-mini" href="#">استعرض القسم</a></div>
-</div>
+    <!-- Main Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between overflow-x-auto py-2 scrollbar-none text-sm font-semibold">
+                <a href="#about" class="px-4 py-2 hover:text-emerald-400 whitespace-nowrap transition-colors"><i class="fa-solid fa-circle-info ml-1"></i> عن اللجنة</a>
+                <a href="#teachers" class="px-4 py-2 hover:text-emerald-400 whitespace-nowrap transition-colors"><i class="fa-solid fa-chalkboard-user ml-1"></i> إعداد المعلمات</a>
+                <a href="#subjects" class="px-4 py-2 hover:text-emerald-400 whitespace-nowrap transition-colors"><i class="fa-solid fa-book-bookmark ml-1"></i> الأقسام المنهجية</a>
+                <a href="#lab" class="px-4 py-2 hover:text-amber-400 text-amber-300 font-bold whitespace-nowrap transition-colors"><i class="fa-solid fa-vial-circle-check ml-1"></i> المختبر التفاعلي</a>
+                <a href="#competition" class="px-4 py-2 hover:text-emerald-400 whitespace-nowrap transition-colors"><i class="fa-solid fa-trophy ml-1"></i> المسابقة الأسبوعية</a>
+                <a href="#achievements" class="px-4 py-2 hover:text-emerald-400 whitespace-nowrap transition-colors"><i class="fa-solid fa-award ml-1"></i> إنجازات الطلبة</a>
+            </div>
+        </div>
+    </nav>
 
-<div class="lab-section" id="labs">
-<div class="section-title" style="margin:0">مختبر الفيزياء التفاعلي 🧪</div>
-<p style="text-align:center;font-size:12px;color:#64748b;margin-top:4px">اكتشف القوانين الفيزيائية من خلال التجربة والمحاكاة</p>
-<div class="lab-grid">
-<div class="lab-main" style="grid-column:span 2">
-<div style="flex:1"><b>F = m a</b><br><span style="font-size:12px">تجربة محاكاة تفاعلية<br>قانون نيوتن الأول</span><br><a href="https://maharammal.my.canva.site/circularmotion" target="_blank" style="background:#2ec4b6;color:white;padding:4px 10px;border-radius:20px;font-size:11px;text-decoration:none;margin-top:6px;display:inline-block">جرب الآن</a></div>
-<div style="font-size:40px">📦</div>
-</div>
-<div class="lab-item"><i class="fa fa-satellite"></i>قانون نيوتن الأول<br><a class="btn-mini" style="background:#0ea5e9" href="https://maharammal.my.canva.site/c1fvcb0shmzjsrv1" target="_blank">جرب الآن</a></div>
-<div class="lab-item"><i class="fa fa-circle-notch"></i>الحركة الدائرية<br><a class="btn-mini" style="background:#0ea5e9" href="https://maharammal.my.canva.site/circularmotion" target="_blank">جرب الآن</a></div>
-<div class="lab-item"><i class="fa fa-arrows-to-circle"></i>العزم<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
-<div class="lab-item"><i class="fa fa-arrow-down"></i>السقوط الحر<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
-<div class="lab-item"><i class="fa fa-wave-square"></i>الطاقة الحركية<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
-<div class="lab-item"><i class="fa fa-magnet"></i>المغناطيسية<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
-</div>
-</div>
+    <!-- Main Body Container -->
+    <main class="max-w-7xl mx-auto px-4 py-10 space-y-16 flex-grow">
 
-<div class="two-col">
-<div class="box">
-<div style="display:flex;justify-content:space-between;align-items:center"><h3>🏆 المسابقة الأسبوعية</h3><span style="font-size:11px;background:#fef3c7;padding:3px 8px;border-radius:20px">سؤال الأسبوع</span></div>
-<p id="qTitle" style="font-size:13px;font-weight:800;margin:10px 0">لماذا يطفو الجليد فوق الماء؟</p>
-<p id="qText" style="font-size:12px;line-height:1.9;color:#475569">الماء حالة غريبة! الجليد أقل كثافة من السائل. صوري تجربة: كأس ماء + ثلج + حجر. ليش الثلج بطفو والحجر بغوص؟ ما علاقة الكثافة والروابط الهيدروجينية؟</p>
-<div style="margin:10px 0;font-size:12px">
-<label><input type="radio" name="opt"> يطفو دون قوة</label><br>
-<label><input type="radio" name="opt"> يستمر بسرعته الثابتة في خط مستقيم</label><br>
-<label><input type="radio" name="opt"> تزداد سرعته تلقائياً</label>
-</div>
-<div style="background:#f8fafc;padding:10px;border-radius:10px">
-<input id="ansName" class="input" placeholder="اسم الطالب">
-<select class="input"><option>اختر الصف والشعبة</option><option>السابع</option><option>الثامن</option><option>التاسع</option><option>العاشر</option></select>
-<input id="ansText" class="input" placeholder="فسر إجابتك">
-<input id="ansFile" type="file" accept="image/*" class="input">
-<button onclick="sendAns()" class="btn-send">🚀 إرسال الإجابة</button>
-<p id="ansMsg" style="font-size:11px;color:green;margin-top:6px"></p>
-<p style="font-size:10px;color:#94a3b8;margin-top:6px">بإرسالك هذا النموذج، أنت توافق على شروط المسابقة</p>
-</div>
-<div style="margin-top:8px"><button onclick="changeQ()" style="font-size:10px;background:none;border:1px dashed #f59e0b;padding:4px 8px;border-radius:8px;cursor:pointer">⚙️ تغيير السؤال (للمعلمة - zita2026)</button> <button onclick="showAns()" style="font-size:10px;background:#0f172a;color:white;padding:4px 8px;border-radius:8px;border:0;cursor:pointer">🔒 عرض الإجابات</button></div>
-<div id="ansList" style="display:none;margin-top:10px"></div>
-</div>
+        <!-- 1. Vision, Goals & Info Section -->
+        <section id="about" class="scroll-mt-20">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800 inline-block relative after:content-[''] after:block after:w-16 after:h-1 after:bg-teal-600 after:mx-auto after:mt-2 after:rounded-full">
+                    رؤية وأهداف اللجنة العلمية
+                </h2>
+                <p class="text-slate-500 text-sm mt-2">أسس ومبادئ العمل العلمي المتميز في مدرسة ذكور زيتا جماعين الثانوية</p>
+            </div>
 
-<div class="box">
-<h3>🎯 أعمال الطلبة وتجاربهم <span style="float:left;font-size:10px;color:#0ea5e9;cursor:pointer">عرض الكل</span></h3>
-<div class="gallery3" style="margin-top:10px">
-<div class="g"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=300"><p>دفيئة علمية</p><span style="background:#22c55e;color:white;padding:2px 6px;border-radius:10px;font-size:9px">استعرض</span></div>
-<div class="g"><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=300"><p>معرض التجارب</p><span style="background:#22c55e;color:white;padding:2px 6px;border-radius:10px">استعرض</span></div>
-<div class="g"><img src="https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=300"><p>مشاريع وابتكارات</p><span style="background:#22c55e;color:white;padding:2px 6px;border-radius:10px">استعرض</span></div>
-</div>
-<h3 style="margin-top:16px">🎯 أهداف اللجنة وخطتها</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;font-size:11px;line-height:1.8">
-<div style="background:#f0f9ff;padding:8px;border-radius:10px">✔ بناء التفكير النقدي والاستقصائي العلمي<br>✔ تعزيز المهارات العملية والتجريب<br>✔ تشجيع البحث والابتكار<br>✔ تنمية العمل الجماعي والمشاركة<br>✔ تحفيز الفضول العلمي والابتكار</div>
-<div style="background:#fefce8;padding:8px;border-radius:10px">✔ إطلاق موقع اللجنة وتفعيل الأقسام<br>✔ تنظيم مسابقة العلوم الشهرية<br>✔ تنظيم معرض علوم مصغر وهجين على شكل تجارب<br>✔ تنفيذ ورش عمل ومسابقات علمية<br>✔ توثيق الإنجازات وتقديم النشطة</div>
-</div>
-<div style="margin-top:10px;background:#f8fafc;padding:10px;border-radius:10px">
-<h4>📸 جدار إنجازات الطلاب - ارفع تجربتك</h4>
-<input id="stName" class="input" placeholder="اسمك + الصف">
-<input id="stTitle" class="input" placeholder="عنوان التجربة">
-<input id="stFile" type="file" accept="image/*" class="input">
-<button onclick="up()" class="btn-send" style="background:#1a936f">نشر ✅</button>
-<p id="upMsg" style="font-size:11px;color:green"></p>
-<div id="gallery" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px"></div>
-</div>
-</div>
-</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border-r-4 border-r-sky-600 group">
+                    <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-sky-700 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">🏫 رؤية المدرسة</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        مدرسة رائدة ومتميزة في إنتاج المعرفة العلمية وترسيخ القيم الأخلاقية والوطنية، لإعداد جيل مبدع قادر على مواكبة التطور التكنولوجي وصناعة المستقبل.
+                    </p>
+                </div>
 
-<div class="footer">
-من فلسطين ... نبدأ والتعلم ❤️<br>
-جميع الحقوق محفوظة © 2026 مدرسة ذكور زيتا جماعين الثانوية
-</div>
+                <!-- Card 2 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border-r-4 border-r-teal-600 group">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-700 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">🔬 رؤية اللجنة العلمية</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        تحويل المفاهيم والنظريات العلمية الجافة إلى تجارب عملية وتفاعلية ملموسة، وجعل الطالب محاوراً وباحثاً وعالماً صغيراً في مجتمعه.
+                    </p>
+                </div>
 
-<script>
-let comp=JSON.parse(localStorage.getItem('comp')||'{"title":"لماذا يطفو الجليد فوق الماء؟","text":"الماء حالة غريبة! الجليد أقل كثافة من السائل. صوري تجربة: كأس ماء + ثلج + حجر. ليش الثلج بطفو والحجر بغوص؟ ما علاقة الكثافة والروابط الهيدروجينية؟"}');
-document.getElementById('qTitle').textContent=comp.title; document.getElementById('qText').textContent=comp.text;
-let answers=JSON.parse(localStorage.getItem('answers')||'[]');
-function sendAns(){let f=document.getElementById('ansFile').files[0];let n=document.getElementById('ansName').value||'طالب';let t=document.getElementById('ansText').value;if(!t&&!f){alert('اكتب إجابة');return}if(f){let r=new FileReader();r.onload=e=>{answers.push({name:n,text:t,img:e.target.result,time:new Date().toLocaleString('ar-PS')});localStorage.setItem('answers',JSON.stringify(answers));document.getElementById('ansMsg').textContent='✅ تم الإرسال'};r.readAsDataURL(f)}else{answers.push({name:n,text:t,img:'',time:new Date().toLocaleString('ar-PS')});localStorage.setItem('answers',JSON.stringify(answers));document.getElementById('ansMsg').textContent='✅ تم الإرسال'}}
-function changeQ(){if(prompt('كلمة السر:')!=='zita2026'){alert('خطأ');return}let t=prompt('عنوان:',comp.title);let d=prompt('نص:',comp.text);if(t){comp.title=t;comp.text=d;localStorage.setItem('comp',JSON.stringify(comp));location.reload()}}
-function showAns(){if(prompt('كلمة السر:')!=='zita2026'){alert('خطأ');return}let div=document.getElementById('ansList');div.style.display='block';div.innerHTML='';answers.slice().reverse().forEach(a=>{div.innerHTML+=`<div style="border:1px solid #eee;padding:8px;border-radius:8px;margin-bottom:6px;background:white"><b>${a.name}</b><p style="font-size:12px">${a.text}</p>${a.img?`<img src="${a.img}" style="width:100%;border-radius:6px">`:''}</div>`})}
-let gal=JSON.parse(localStorage.getItem('gal')||'[]');function render(){let g=document.getElementById('gallery');g.innerHTML='';gal.slice().reverse().forEach(it=>{g.innerHTML+=`<div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.06)"><img src="${it.img}" style="width:100%;height:70px;object-fit:cover"><div style="padding:4px;font-size:10px"><b>${it.title}</b><br>${it.name}</div></div>`})}render();
-function up(){let f=document.getElementById('stFile').files[0];if(!f){alert('اختاري صورة');return}let r=new FileReader();r.onload=e=>{gal.push({name:document.getElementById('stName').value,title:document.getElementById('stTitle').value,img:e.target.result});localStorage.setItem('gal',JSON.stringify(gal));render();document.getElementById('upMsg').textContent='✅ تم النشر'};r.readAsDataURL(f)}
-</script>
+                <!-- Card 3 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border-r-4 border-r-purple-600 group">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-700 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">📋 خطة اللجنة العلمية</h3>
+                    <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+                        <li>تفعيل المختبرات الافتراضية والذكية.</li>
+                        <li>إقامة المسابقات والمطالبات العلمية.</li>
+                        <li>إعداد مشاريع وبحوث طلابية إبداعية.</li>
+                        <li>ربط المفاهيم بالبيئة الفلسطينية والواقع.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border-r-4 border-r-amber-500 group">
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-700 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">🎯 أهدافنا الرئيسية</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        تنمية روح التفكير النقدي والتحليلي، وتطوير مهارت البحث العلمي والابتكار، مع توظيف أفضل الممارسات التكنولوجية المعاصرة.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Teachers Dedicated Section -->
+        <section id="teachers" class="bg-gradient-to-r from-slate-900 to-teal-950 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
+            <div class="absolute right-0 top-0 opacity-10 text-9xl pointer-events-none">👩‍🏫</div>
+            <div class="relative z-10">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="bg-teal-500/20 text-teal-300 text-xs font-bold px-4 py-1.5 rounded-full border border-teal-500/30">الإشراف والقيادة العلمية</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-3">إعداد معلمات اللجنة العلمية</h2>
+                    <p class="text-xs text-slate-300 mt-2">قياديات التميز العلمي والعمل الدؤوب لمدرسة ذكور زيتا جماعين الثانوية</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <!-- Teacher 1 -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/10 hover:bg-white/15 transition-all">
+                        <div class="w-16 h-16 bg-gradient-to-tr from-amber-400 to-amber-600 rounded-full mx-auto flex items-center justify-center text-2xl mb-3 shadow-lg">
+                            📐
+                        </div>
+                        <h4 class="font-bold text-lg text-amber-300">معلمة الرياضيات</h4>
+                        <p class="text-base font-extrabold text-white mt-1">كرمل الخطيب</p>
+                        <span class="inline-block mt-3 text-xs bg-amber-400/20 text-amber-200 px-3 py-1 rounded-full">إبداع وتفكير منطقي</span>
+                    </div>
+
+                    <!-- Teacher 2 -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/10 hover:bg-white/15 transition-all">
+                        <div class="w-16 h-16 bg-gradient-to-tr from-sky-400 to-blue-600 rounded-full mx-auto flex items-center justify-center text-2xl mb-3 shadow-lg">
+                            ⚙️
+                        </div>
+                        <h4 class="font-bold text-lg text-sky-300">معلمة الفيزياء</h4>
+                        <p class="text-base font-extrabold text-white mt-1">إسراء أبو شعيب</p>
+                        <span class="inline-block mt-3 text-xs bg-sky-400/20 text-sky-200 px-3 py-1 rounded-full">استكشاف واستنتاجات</span>
+                    </div>
+
+                    <!-- Teacher 3 -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/10 hover:bg-white/15 transition-all">
+                        <div class="w-16 h-16 bg-gradient-to-tr from-emerald-400 to-teal-600 rounded-full mx-auto flex items-center justify-center text-2xl mb-3 shadow-lg">
+                            🧬
+                        </div>
+                        <h4 class="font-bold text-lg text-emerald-300">معلمة الأحياء</h4>
+                        <p class="text-base font-extrabold text-white mt-1">أبرار صلاح</p>
+                        <span class="inline-block mt-3 text-xs bg-emerald-400/20 text-emerald-200 px-3 py-1 rounded-full">حياة وابتكار حيوي</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Methodological Academic Departments -->
+        <section id="subjects" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800 inline-block relative after:content-[''] after:block after:w-16 after:h-1 after:bg-teal-600 after:mx-auto after:mt-2 after:rounded-full">
+                    أقسام المواد العلمية المنهجية
+                </h2>
+                <p class="text-slate-500 text-sm mt-2">استعرض المنهاج، الألغاز، والأنشطة التفاعلية حسب كل تخصص</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex justify-center border-b border-slate-200 mb-8 overflow-x-auto">
+                <div class="flex space-x-2 space-x-reverse min-w-max pb-2">
+                    <button onclick="switchTab('math')" id="tab-math" class="tab-btn active px-5 py-2.5 text-sm font-bold text-amber-600 flex items-center gap-2">
+                        <span>📐</span> الرياضيات
+                    </button>
+                    <button onclick="switchTab('physics')" id="tab-physics" class="tab-btn px-5 py-2.5 text-sm font-bold text-sky-600 flex items-center gap-2">
+                        <span>⚙️</span> الفيزياء
+                    </button>
+                    <button onclick="switchTab('chemistry')" id="tab-chemistry" class="tab-btn px-5 py-2.5 text-sm font-bold text-purple-600 flex items-center gap-2">
+                        <span>🧪</span> الكيمياء
+                    </button>
+                    <button onclick="switchTab('biology')" id="tab-biology" class="tab-btn px-5 py-2.5 text-sm font-bold text-emerald-600 flex items-center gap-2">
+                        <span>🧬</span> الأحياء
+                    </button>
+                    <button onclick="switchTab('general')" id="tab-general" class="tab-btn px-5 py-2.5 text-sm font-bold text-cyan-600 flex items-center gap-2">
+                        <span>🌍</span> العلوم العامة (5-9)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Containers -->
+            <div id="tab-content">
+                <!-- 1. Mathematics Tab -->
+                <div id="content-math" class="space-y-6">
+                    <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-900">قسم الرياضيات - لغة الكون والمنطق</h3>
+                            <p class="text-xs text-amber-700 mt-1">تنمية المهارات الرياضية والحس العددي للصفوف: العاشر، الحادي عشر، والتوجيهي.</p>
+                        </div>
+                        <span class="px-4 py-2 bg-amber-500 text-white font-black text-lg rounded-xl shadow">π ∑ √x ∫</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Grade 10 Math -->
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-extrabold px-3 py-1 rounded-full">الصف العاشر</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-3 mb-2">الهندسة المستوية والمثلثات</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">تركيز على النسب المثلثية، اقترانات التغير، والمعادلات الأسية.</p>
+                            
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 mb-3 text-xs">
+                                <span class="font-bold text-amber-700">🧩 لغز عاشر:</span>
+                                <p class="text-slate-700 mt-1">عدد إذا ضربته في نفسه ثم أضفت إليه 5 كان الناتج يساوي 30، ما هو العدد؟</p>
+                                <button onclick="alert('الجواب الصحيح: 5 (لأن 5×5 = 25 + 5 = 30)')" class="mt-2 text-amber-600 font-bold underline text-[11px]">كشف الحل</button>
+                            </div>
+                        </div>
+
+                        <!-- Grade 11 Math -->
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-extrabold px-3 py-1 rounded-full">الصف الحادي عشر</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-3 mb-2">المتتاليات واللوغاريتمات</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">بناء المدارك التحليلية للتهيؤ لمرحلة التوجيهي، والمصفوفات.</p>
+
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 mb-3 text-xs">
+                                <span class="font-bold text-amber-700">🧩 تحدي 11:</span>
+                                <p class="text-slate-700 mt-1">ما هو الحد التالي في المتتالية: 2, 4, 8, 16, ...؟</p>
+                                <button onclick="alert('الجواب الصحيح: 32 (تتضاعف القيم بضربها في 2)')" class="mt-2 text-amber-600 font-bold underline text-[11px]">كشف الحل</button>
+                            </div>
+                        </div>
+
+                        <!-- Grade 12 Math -->
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-extrabold px-3 py-1 rounded-full">التوجيهي (الثاني عشر)</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-3 mb-2">التفاضل والتكامل والمصفوفات</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">مفاهيم النهايات، قواعد المشتقات، والمساحات تحت المنحنيات.</p>
+
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 mb-3 text-xs">
+                                <span class="font-bold text-amber-700">📐 مسألة تطبيقية:</span>
+                                <p class="text-slate-700 mt-1">مشتقة الدالة f(x) = 3x² + 5x بالنسبة لـ x هي؟</p>
+                                <button onclick="alert('المشتقة هي: f\'(x) = 6x + 5')" class="mt-2 text-amber-600 font-bold underline text-[11px]">كشف الحل</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Physics Tab -->
+                <div id="content-physics" class="hidden space-y-6">
+                    <div class="bg-sky-50 rounded-2xl p-6 border border-sky-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-900">قسم الفيزياء - علوم القوة والحركة والطاقة</h3>
+                            <p class="text-xs text-sky-700 mt-1">شرح مفاهيم المتجهات، قوانين نيوتن، والسقوط الحر للصفوف 10، 11، والتوجيهي.</p>
+                        </div>
+                        <span class="px-4 py-2 bg-sky-500 text-white font-black text-lg rounded-xl shadow">F = m · a</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Scientist Showcase -->
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center text-sky-700 font-bold">📜</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">عالم فيزيائي: ابن الهيثم</h4>
+                                    <p class="text-[11px] text-slate-500">مؤسس علم البصريات الحديث</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                العالم العربي الحسن ابن الهيثم، أول من أثبت أن الضوء يسقط من الأجسام إلى العين وليس العكس، ومهد الطريق لاخترع الكاميرا والعدسات.
+                            </p>
+                        </div>
+
+                        <!-- Physics Quiz / Fact -->
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-extrabold px-3 py-1 rounded-full">💡 معلومة فيزيائية</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-3 mb-2">قوانين نيوتن للحركة</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <b>القانون الأول:</b> الجسم الساكن يبقى ساكناً والمتحرك يبقى متحركاً ما لم تؤثر عليه قوة خارجية.
+                            </p>
+                            <div class="mt-3 p-2 bg-sky-50 rounded-lg text-xs text-sky-800">
+                                <b>سؤال:</b> لماذا ينحرف الراكب للإمام عند توقف الحافلة فجأة؟ (القصور الذاتي)
+                            </div>
+                        </div>
+
+                        <!-- Interactive Vector Exercise -->
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-extrabold px-3 py-1 rounded-full">🧩 لغز المتجهات</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-3 mb-2">محصلة القوى المتعامدة</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                تؤثر قوتان متفاتان 3N شرقا و 4N شمالاً على جسم، كم تبلغ المحصلة؟
+                            </p>
+                            <button onclick="alert('المحصلة حسب فيثاغورس = √(3² + 4²) = √25 = 5 نيوتن')" class="mt-4 w-full bg-sky-600 text-white font-bold py-2 text-xs rounded-xl hover:bg-sky-700 transition">تحقق من الحل</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Chemistry Tab -->
+                <div id="content-chemistry" class="hidden space-y-6">
+                    <div class="bg-purple-50 rounded-2xl p-6 border border-purple-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-purple-900">قسم الكيمياء - تفاعلات المادة والعناصر</h3>
+                            <p class="text-xs text-purple-700 mt-1">التعرف على التفاعلات الكيميائية، الروابط، الرقم الهيدروجيني pH، وسلسلة النشاط.</p>
+                        </div>
+                        <span class="px-4 py-2 bg-purple-500 text-white font-black text-lg rounded-xl shadow">H₂O + NaCl</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <h4 class="font-bold text-base text-slate-800 mb-2">🧪 تعريف الكيمياء وأساسياته</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                هو علم دراسة المادة وتغيراتها، وتركيب الذرة من نيوترونات وبروتونات وإلكترونات تدور في مستويات الطاقة.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <h4 class="font-bold text-base text-slate-800 mb-2">⚖️ التأكسد والاختزال</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                **التأكسد:** عملية فقد للإلكترونات وترفق باعتلاء درجة التأكسد.<br>
+                                **الاختزال:** عملية كسب للإلكترونات.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <h4 class="font-bold text-base text-slate-800 mb-2">🧩 لغز الجدول الدوري</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                عنصر غازي يمثل 78% من الغلاف الجوي للأرض ولا يساعد على الاشتعال، ما هو؟
+                            </p>
+                            <button onclick="alert('الجواب: غاز النيتروجين (N₂)')" class="mt-4 w-full bg-purple-600 text-white font-bold py-2 text-xs rounded-xl hover:bg-purple-700 transition">عرض الإجابة</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Biology Tab -->
+                <div id="content-biology" class="hidden space-y-6">
+                    <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-900">قسم الأحياء - أسرار الكائنات الحية والوراثة</h3>
+                            <p class="text-xs text-emerald-700 mt-1">دراسة التركيب الخلوي، شريط DNA، وأجهزة الجسم الحيوية.</p>
+                        </div>
+                        <span class="px-4 py-2 bg-emerald-500 text-white font-black text-lg rounded-xl shadow">DNA 🧬 ATP</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <h4 class="font-bold text-base text-slate-800 mb-2">🧬 الحمض النووي DNA</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                يحمل جميع الصفات الوراثية للكائن الحي وهو عبارة عن شريط حلزوني مزدوج يتكون من قواعد نيتروجينية (A, T, C, G).
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <h4 class="font-bold text-base text-slate-800 mb-2">🫀 جهاز الدوران</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                يتكون من القلب والأوعية الدموية والدم، حيث يعمل القلب كمضخة لتزويد الخلايا بالأكسجين والمغذيات.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                            <h4 class="font-bold text-base text-slate-800 mb-2">🧩 اختبر معلوماتك الحيوية</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                ما هي عضوية الخلية المسؤولة عن إنتاج الطاقة (ATP)؟
+                            </p>
+                            <button onclick="alert('الجواب: المايتوكندريا (بيوت الطاقة)')" class="mt-4 w-full bg-emerald-600 text-white font-bold py-2 text-xs rounded-xl hover:bg-emerald-700 transition">إظهار النتيجة</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. General Science Tab (5-9) -->
+                <div id="content-general" class="hidden space-y-6">
+                    <div class="bg-cyan-50 rounded-2xl p-6 border border-cyan-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-900">قسم العلوم العامة والحياة (الصفوف 5 - 9)</h3>
+                            <p class="text-xs text-cyan-700 mt-1">استكشاف مبسط وشامل لمبادئ الفيزياء، الكيمياء، الأحياء، وعلوم الأرض والجيولوجيا.</p>
+                        </div>
+                        <span class="px-4 py-2 bg-cyan-500 text-white font-black text-lg rounded-xl shadow">🌍 ☀️ 💧 🌋</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <span class="text-xl">⚡</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">مجال الفيزياء</h4>
+                            <p class="text-[11px] text-slate-600 mt-1">حالات المادة الثلاث، الكهرباء البسيطة، وأشكال الطاقة وتحولاتها.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <span class="text-xl">🧪</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">مجال الكيمياء</h4>
+                            <p class="text-[11px] text-slate-600 mt-1">المخاليط والمركبات، التغيرات الفيزيائية والكيميائية للماء.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <span class="text-xl">🌱</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">مجال الأحياء</h4>
+                            <p class="text-[11px] text-slate-600 mt-1">عملية البناء الضوئي في النباتات، والسلاسل الغذائية والأنظمة البيئية.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <span class="text-xl">🌋</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">علوم الأرض (الجيولوجيا)</h4>
+                            <p class="text-[11px] text-slate-600 mt-1">طبقات الأرض، الدورة الصخرية، والبراكين والزلازل والتعرية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Science Virtual Lab -->
+        <section id="lab" class="scroll-mt-20 bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+            <div class="text-center mb-8">
+                <span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold px-4 py-1.5 rounded-full">المختبر الافتراضي العلمي الذكي</span>
+                <h2 class="text-2xl sm:text-4xl font-black mt-3 text-amber-300">🧪 المختبر التفاعلي للعلوم</h2>
+                <p class="text-xs sm:text-sm text-slate-300 mt-2">اختر المحاكاة التفاعلية، تحكم في المتغيرات، وشاهد النتائج في الوقت الفعلي!</p>
+            </div>
+
+            <!-- Lab Selection Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button onclick="selectLabSim('pendulum')" id="btn-pendulum" class="lab-select-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-slate-900 shadow-md">
+                    ⚙️ السقوط الحر / البندول
+                </button>
+                <button onclick="selectLabSim('energy')" id="btn-energy" class="lab-select-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700">
+                    🌀 الحركة الدائرية والعزم
+                </button>
+                <button onclick="selectLabSim('chemistry')" id="btn-chemistry" class="lab-select-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700">
+                    🧪 التأكسد ونشاط فلز النحاس
+                </button>
+                <button onclick="selectLabSim('dna')" id="btn-dna" class="lab-select-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700">
+                    🧬 الخلية الحية وشريط DNA
+                </button>
+            </div>
+
+            <!-- Simulation Canvas Area -->
+            <div class="bg-slate-950 rounded-2xl p-4 border border-slate-800 max-w-4xl mx-auto shadow-inner">
+                <div class="flex justify-between items-center mb-3 px-2">
+                    <span id="sim-title" class="text-sm font-bold text-amber-400">محاكاة البندول والسقوط الحر</span>
+                    <span class="text-[11px] text-slate-400">تفاعلي 100%</span>
+                </div>
+
+                <canvas id="simCanvas" class="w-full h-64 sm:h-80 bg-slate-900 rounded-xl border border-slate-800 cursor-pointer"></canvas>
+
+                <!-- Controls Bar -->
+                <div id="sim-controls" class="mt-4 p-4 bg-slate-900 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs">
+                    <div class="flex items-center gap-2">
+                        <button id="btn-start" onclick="toggleSimPlay()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold">تشغيل / إيقاف</button>
+                        <button onclick="resetSim()" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg">إعادة ضبط</button>
+                    </div>
+                    <div id="sim-status" class="text-slate-300 font-mono text-[11px] bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+                        السرعة: 0 | الطاقة: متزنة
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Weekly Competition -->
+        <section id="competition" class="scroll-mt-20">
+            <div class="bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-emerald-500/20">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="bg-amber-400 text-slate-900 text-xs font-extrabold px-4 py-1 rounded-full shadow">تحدي هذا الأسبوع</span>
+                    <h2 class="text-2xl sm:text-3xl font-black mt-2 text-white">🏆 المسابقة العلمية الأسبوعية</h2>
+                    <p class="text-xs text-emerald-200 mt-1">أجب عن الأسئلة وسجل اسمك لتكون ضمن قائمة الفائزين المبدعين!</p>
+                </div>
+
+                <form id="quizForm" onsubmit="submitQuiz(event)" class="max-w-2xl mx-auto bg-slate-900/80 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-emerald-500/30 space-y-6">
+                    <!-- Student Details -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-emerald-300 mb-1">اسم الطالب الرباعي</label>
+                            <input type="text" id="studentName" required placeholder="أدخل اسمك كاملاً" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-emerald-300 mb-1">الصف الدراسـي</label>
+                            <select id="studentGrade" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                                <option value="">اختر الصف</option>
+                                <option value="العاشر">العاشر الأساسي</option>
+                                <option value="الحادي عشر">الحادي عشر العلمي</option>
+                                <option value="الثاني عشر">الثاني عشر (التوجيهي)</option>
+                                <option value="أساسي">الصف 5 - 9</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-emerald-300 mb-1">الشعبـــة</label>
+                            <input type="text" id="studentSection" required placeholder="مثال: أ / ب" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-800">
+
+                    <!-- Question 1: Physics -->
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold text-amber-300">⚙️ سؤال الفيزياء: ما هي وحدة قياس القوة في النظام الدولي للوحدات؟</p>
+                        <div class="grid grid-cols-3 gap-2 text-xs">
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q1" value="جول" required> جول
+                            </label>
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q1" value="نيوتن"> نيوتن
+                            </label>
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q1" value="واط"> واط
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: Chemistry -->
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold text-purple-300">🧪 سؤال الكيمياء: ما هو الرقم الهيدروجيني (pH) للمحلول المتعادل تماماً؟</p>
+                        <div class="grid grid-cols-3 gap-2 text-xs">
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q2" value="0" required> 0
+                            </label>
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q2" value="7"> 7
+                            </label>
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q2" value="14"> 14
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: Biology -->
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold text-emerald-300">🧬 سؤال الأحياء: أي الأجزاء التالية توجد فقط في الخلية النباتية دون الحيوانية؟</p>
+                        <div class="grid grid-cols-3 gap-2 text-xs">
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q3" value="الجدار الخلوي" required> الجدار الخلوي
+                            </label>
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q3" value="النواة"> النواة
+                            </label>
+                            <label class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex items-center gap-2 cursor-pointer hover:bg-slate-700">
+                                <input type="radio" name="q3" value="الغشاء الخلوي"> الغشاء الخلوي
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-black py-3 rounded-xl shadow-lg transition-all text-sm">
+                        🚀 إرسال الإجابة والتحقق من النتيجة
+                    </button>
+                </form>
+
+                <!-- Result Alert Container -->
+                <div id="quizResult" class="hidden max-w-2xl mx-auto mt-4 p-4 rounded-xl text-center text-xs font-bold"></div>
+            </div>
+        </section>
+
+        <!-- 6. Student Achievements & Creative Innovations -->
+        <section id="achievements" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800 inline-block relative after:content-[''] after:block after:w-16 after:h-1 after:bg-teal-600 after:mx-auto after:mt-2 after:rounded-full">
+                    إنجازات الطلبة والمشاريع الإبداعية
+                </h2>
+                <p class="text-slate-500 text-sm mt-2">معرض ابتكارات طلبة مدرسة ذكور زيتا جماعين الثانوية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="h-36 bg-gradient-to-br from-sky-600 to-teal-800 p-4 flex items-end text-white">
+                        <span class="text-3xl">🤖</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[11px] font-bold text-sky-600 bg-sky-50 px-2.5 py-1 rounded-full">مشروع الفيزياء والذكاء</span>
+                        <h4 class="font-bold text-base text-slate-800 mt-2">الذراع الهيدروليكي الآلي</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            تطبيق عملي لقاعدة باسكال في ضغط السوائل لنقل الحركة بدقة وسهولة.
+                        </p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex justify-between">
+                            <span>إعداد طلاب عاشر</span>
+                            <span>اشراف: معلمة الفيزياء</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="h-36 bg-gradient-to-br from-purple-600 to-indigo-800 p-4 flex items-end text-white">
+                        <span class="text-3xl">🔋</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[11px] font-bold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full">مشروع الكيمياء والبيئة</span>
+                        <h4 class="font-bold text-base text-slate-800 mt-2">استخلاص الطاقة من ثمار الليمون</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            تجربة تفاعلات التأكسد والاختزال التلقائية لتوليد شرارة كهربائية بسيطة.
+                        </p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex justify-between">
+                            <span>إعداد طلاب الحادي عشر</span>
+                            <span>زيتا جماعين</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="h-36 bg-gradient-to-br from-emerald-600 to-teal-800 p-4 flex items-end text-white">
+                        <span class="text-3xl">🌱</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">مشروع الأحياء المستدامة</span>
+                        <h4 class="font-bold text-base text-slate-800 mt-2">نظام الزراعة المائية الافتراضي</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            دراسة نمو النباتات بدون تربة مع مراقبة المحاليل المغذية وتوازن pH.
+                        </p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex justify-between">
+                            <span>إعداد طلاب التوجيهي</span>
+                            <span>إشراف معلمات اللجنة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <div class="flex items-center justify-center gap-2 text-white font-bold text-sm">
+                <span>🇵🇸</span>
+                <span>موقع اللجنة العلمية - مدرسة ذكور زيتا جماعين الثانوية</span>
+            </div>
+            <p>مديرية التربية والتعليم - سلفيت | وزارة التربية والتعليم العالي - دولة فلسطين</p>
+            <p class="text-[11px] text-slate-500">
+                إعداد وتصميم المعلمات: (معلمة الرياضيات كرمل الخطيب | معلمة الفيزياء إسراء أبو شعيب | معلمة الأحياء أبرار صلاح)
+            </p>
+            <div class="pt-2 text-[10px] text-slate-600">
+                © جميع الحقوق محفوظة 2026 - اللجنة العلمية الإبداعية
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Applications -->
+    <script>
+        // 1. Tab Switching Functionality
+        function switchTab(tabKey) {
+            // Hide all tab contents
+            const contents = ['math', 'physics', 'chemistry', 'biology', 'general'];
+            contents.forEach(key => {
+                document.getElementById(`content-${key}`).classList.add('hidden');
+                document.getElementById(`tab-${key}`).classList.remove('active');
+            });
+
+            // Show selected
+            document.getElementById(`content-${tabKey}`).classList.remove('hidden');
+            document.getElementById(`tab-${tabKey}`).classList.add('active');
+        }
+
+        // 2. Interactive Physics & Science Lab Engine (Canvas)
+        const canvas = document.getElementById('simCanvas');
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+        let currentSim = 'pendulum';
+        let isRunning = true;
+
+        // Resize Canvas properly
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth - 32;
+            canvas.height = 280;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Pendulum variables
+        let angle = Math.PI / 4;
+        let angleVelocity = 0.0;
+        let angleAcceleration = 0.0;
+        let length = 130;
+
+        // DNA variables
+        let dnaFrame = 0;
+
+        // Circular Motion Variables
+        let circleAngle = 0;
+
+        function renderSim() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            if (currentSim === 'pendulum') {
+                // Pendulum physics simulation
+                if (isRunning) {
+                    let gravity = 0.4;
+                    angleAcceleration = (-1 * gravity / length) * Math.sin(angle);
+                    angleVelocity += angleAcceleration;
+                    angle += angleVelocity;
+                    angleVelocity *= 0.99; // Damping/friction
+                }
+
+                let x = centerX + length * Math.sin(angle);
+                let y = 30 + length * Math.cos(angle);
+
+                // Draw Base Support
+                ctx.strokeStyle = '#64748b';
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(centerX - 40, 30);
+                ctx.lineTo(centerX + 40, 30);
+                ctx.stroke();
+
+                // Draw String
+                ctx.strokeStyle = '#0ea5e9';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(centerX, 30);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+
+                // Draw Bob
+                ctx.fillStyle = '#f59e0b';
+                ctx.beginPath();
+                ctx.arc(x, y, 16, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = '#fff';
+                ctx.stroke();
+
+                document.getElementById('sim-status').innerText = `الزاوية: ${(angle * 180 / Math.PI).toFixed(1)}° | السرعة الزاوية: ${angleVelocity.toFixed(3)}`;
+
+            } else if (currentSim === 'energy') {
+                // Circular motion sim
+                if (isRunning) circleAngle += 0.03;
+
+                let radius = 70;
+                let px = centerX + radius * Math.cos(circleAngle);
+                let py = centerY + radius * Math.sin(circleAngle);
+
+                // Center point
+                ctx.fillStyle = '#ef4444';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 6, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Orbit line
+                ctx.strokeStyle = '#334155';
+                ctx.setLineDash([4, 4]);
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Radius Line
+                ctx.strokeStyle = '#a855f7';
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(px, py);
+                ctx.stroke();
+
+                // Rotating Object
+                ctx.fillStyle = '#0ea5e9';
+                ctx.beginPath();
+                ctx.arc(px, py, 14, 0, Math.PI * 2);
+                ctx.fill();
+
+                document.getElementById('sim-status').innerText = `قوة الجذب المركزي = F_c | التردد: متنسق`;
+
+            } else if (currentSim === 'chemistry') {
+                // Chemical reaction sim (Copper ions solution)
+                ctx.fillStyle = '#1e293b';
+                ctx.fillRect(centerX - 60, centerY - 60, 120, 120);
+
+                // Liquid
+                ctx.fillStyle = '#0284c7';
+                ctx.fillRect(centerX - 55, centerY - 20, 110, 75);
+
+                // Test Tube outline
+                ctx.strokeStyle = '#cbd5e1';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(centerX - 60, centerY - 60, 120, 120);
+
+                // Floating Ions
+                if (isRunning) dnaFrame += 0.05;
+                for (let i = 0; i < 6; i++) {
+                    let ionX = centerX - 30 + (i * 12);
+                    let ionY = centerY + Math.sin(dnaFrame + i) * 15;
+                    ctx.fillStyle = '#fbbf24';
+                    ctx.beginPath();
+                    ctx.arc(ionX, ionY, 5, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                document.getElementById('sim-status').innerText = `محلول كبريتات النحاس (Cu²⁺) + تفاعل اختزال`;
+
+            } else if (currentSim === 'dna') {
+                // DNA Double Helix Animation
+                if (isRunning) dnaFrame += 0.04;
+
+                ctx.lineWidth = 2;
+                for (let i = -120; i <= 120; i += 12) {
+                    let y = centerY + i;
+                    let x1 = centerX + Math.sin(dnaFrame + i * 0.03) * 50;
+                    let x2 = centerX - Math.sin(dnaFrame + i * 0.03) * 50;
+
+                    // Connecting base pair
+                    ctx.strokeStyle = '#34d399';
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y);
+                    ctx.lineTo(x2, y);
+                    ctx.stroke();
+
+                    // Strand 1
+                    ctx.fillStyle = '#38bdf8';
+                    ctx.beginPath();
+                    ctx.arc(x1, y, 5, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Strand 2
+                    ctx.fillStyle = '#f43f5e';
+                    ctx.beginPath();
+                    ctx.arc(x2, y, 5, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                document.getElementById('sim-status').innerText = `شريط DNA الحلزوني المزدوج (القواعد N₂: A-T, C-G)`;
+            }
+
+            animationFrameId = requestAnimationFrame(renderSim);
+        }
+
+        function selectLabSim(simType) {
+            currentSim = simType;
+            const titles = {
+                'pendulum': 'محاكاة البندول والسقوط الحر',
+                'energy': 'محاكاة الحركة الدائرية والعزم',
+                'chemistry': 'محاكاة تفاعل التأكسد والاختزال فلز النحاس',
+                'dna': 'محاكاة شريط DNA للخلية الحية'
+            };
+            document.getElementById('sim-title').innerText = titles[simType];
+        }
+
+        function toggleSimPlay() {
+            isRunning = !isRunning;
+            document.getElementById('btn-start').innerText = isRunning ? 'إيقاف مؤقت' : 'تشغيل';
+        }
+
+        function resetSim() {
+            angle = Math.PI / 4;
+            angleVelocity = 0;
+            circleAngle = 0;
+            dnaFrame = 0;
+            isRunning = true;
+            document.getElementById('btn-start').innerText = 'إيقاف مؤقت';
+        }
+
+        // Initialize Canvas Animation loop
+        renderSim();
+
+        // 3. Quiz Form Submission Logic
+        function submitQuiz(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('studentName').value;
+            const grade = document.getElementById('studentGrade').value;
+            const section = document.getElementById('studentSection').value;
+
+            const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+            const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+            const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+
+            let score = 0;
+            if (q1 === 'نيوتن') score += 1;
+            if (q2 === '7') score += 1;
+            if (q3 === 'الجدار الخلوي') score += 1;
+
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.classList.remove('hidden', 'bg-emerald-500/20', 'bg-amber-500/20', 'text-emerald-300', 'text-amber-300');
+
+            if (score === 3) {
+                resultDiv.classList.add('bg-emerald-500/20', 'text-emerald-300', 'border', 'border-emerald-500/40');
+                resultDiv.innerHTML = `🎉 مبارك يا بطل! الطالب/ة (${name}) - صف ${grade} (${section})، إجاباتك كاملة وصحيحة (3/3). تم تسجيلك في لوحة شرف اللجنة العلمية!`;
+            } else {
+                resultDiv.classList.add('bg-amber-500/20', 'text-amber-300', 'border', 'border-amber-500/40');
+                resultDiv.innerHTML = `👏 أداء جيد يا (${name})! درجتك هي (${score}/3). راجع المفاهيم العلمية في الموقع وحاول مرة أخرى للوصول للدرجة الكاملة!`;
+            }
+        }
+    </script>
 </body>
 </html>
