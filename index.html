@@ -3,160 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>موقع اللجنة العلمية - ذكور زيتا جماعين الثانوية</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<title>موقع اللجنة العلمية - مدرسة ذكور زيتا جماعين الثانوية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-*{font-family:'Tajawal',sans-serif;box-sizing:border-box}
-body{margin:0;background:#f8fafc;color:#0f172a}
-.header-official{background:linear-gradient(135deg,#0f4c75 0%,#1a936f 100%);color:white;padding:25px 15px;text-align:center;position:relative;overflow:hidden}
-.header-official::before{content:'∑ π Ω λ';position:absolute;left:20px;top:10px;opacity:0.15;font-size:40px;letter-spacing:15px}
-.header-official::after{content:'H₂O E=mc²';position:absolute;right:20px;bottom:10px;opacity:0.15;font-size:30px}
-.header-official h4{margin:0;font-size:13px;font-weight:400;opacity:0.9;letter-spacing:0.5px}
-.header-official h2{margin:6px 0 0;font-size:22px;font-weight:800}
-.header-official h1{margin:10px 0 0;font-size:28px;font-weight:800;background:rgba(255,255,255,0.15);display:inline-block;padding:6px 18px;border-radius:30px}
-.container{max-width:1150px;margin:auto;padding:18px}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
-.info-card{background:white;border-radius:14px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);border-right:4px solid #0f4c75}
-.info-card h3{margin:0 0 6px;font-size:16px;color:#0f4c75}
-.info-card p{margin:0;font-size:13px;color:#475569;line-height:1.8}
-.section-title{margin:28px 0 12px;font-size:20px;font-weight:800;color:#0f4c75;border-right:5px solid #1a936f;padding-right:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.card{background:white;border-radius:20px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,0.06);transition:0.3s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.1)}
-.card .sym{position:absolute;left:12px;top:10px;opacity:0.07;font-size:48px;font-weight:800}
-.card h3{margin:8px 0;font-size:19px}
-.card p{font-size:13.5px;color:#475569;line-height:1.9}
-.btn{display:block;text-align:center;padding:11px;border-radius:12px;text-decoration:none;font-weight:800;margin-top:10px;font-size:14px}
-.btn-physics{background:linear-gradient(135deg,#0f4c75,#0ea5e9);color:white}
-.btn-science{background:linear-gradient(135deg,#6d28d9,#8b5cf6);color:white}
-.btn-math{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:white}
-canvas{width:100%;height:180px;background:linear-gradient(180deg,#f8fafc,#e0f2fe);border-radius:12px;border:1px solid #e2e8f0;display:block;margin-top:10px}
-.footer{text-align:center;padding:25px;color:#94a3b8;font-size:12px}
+*{font-family:'Tajawal',sans-serif;box-sizing:border-box;margin:0;padding:0}
+body{background:#f0f7ff;color:#0f172a}
+.top-bar{background:#0b3d5f;color:white;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.top-bar .left{opacity:.9}
+.nav{background:#0e4a73;display:flex;gap:18px;padding:10px 20px;color:white;font-size:13px;justify-content:center}
+.nav span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:20px}
+.hero{position:relative;background:linear-gradient(rgba(10,40,70,.75),rgba(10,40,70,.6)),url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1500');background-size:cover;background-position:center;color:white;padding:40px 20px 60px;text-align:center}
+.hero .flag{position:absolute;right:0;top:0;width:180px;opacity:.95}
+.hero h1{font-size:34px;font-weight:900;margin:0}
+.hero h2{font-size:16px;font-weight:400;margin-top:6px;opacity:.9}
+.hero p{margin-top:8px;font-size:13px;opacity:.85}
+.btn-green{background:linear-gradient(135deg,#1a936f,#2ec4b6);color:white;padding:8px 20px;border-radius:25px;text-decoration:none;font-weight:800;font-size:13px;display:inline-block;margin-top:12px}
+.info-bar{background:white;border-radius:0 0 30px 30px;margin:-30px 20px 0;box-shadow:0 10px 30px rgba(0,0,0,.1);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;overflow:hidden;position:relative;z-index:2}
+.info-bar div{padding:18px 14px;text-align:center;border-left:1px solid #eef2f7;font-size:11px;line-height:1.8;color:#475569}
+.info-bar div b{color:#0f4c75;font-size:13px;display:block;margin-bottom:4px}
+.section-title{text-align:center;margin:30px 0 16px;font-size:22px;font-weight:900;color:#0f4c75}
+.grid5{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;padding:0 20px}
+.card-dept{border-radius:16px;padding:16px;text-align:center;color:#0f172a;position:relative;overflow:hidden}
+.card-dept h3{font-size:15px;margin:8px 0 6px}
+.card-dept p{font-size:11px;line-height:1.7;color:#334155}
+.card-dept .btn-mini{margin-top:10px;padding:5px 12px;border-radius:20px;font-size:11px;color:white;display:inline-block;text-decoration:none;font-weight:700}
+.bg-math{background:linear-gradient(180deg,#e6f9f0,#b7f0d0)} .bg-math .btn-mini{background:#1a936f}
+.bg-phys{background:linear-gradient(180deg,#e6f3ff,#b8dcff)} .bg-phys .btn-mini{background:#0ea5e9}
+.bg-chem{background:linear-gradient(180deg,#fff2e0,#ffcc8a)} .bg-chem .btn-mini{background:#f59e0b}
+.bg-bio{background:linear-gradient(180deg,#fde6ff,#f0aaff)} .bg-bio .btn-mini{background:#a855f7}
+.bg-sci{background:linear-gradient(180deg,#e6ffe6,#a8f0a8)} .bg-sci .btn-mini{background:#16a34a}
+.lab-section{background:linear-gradient(180deg,#f0f7ff,#ffffff);margin:20px;border-radius:18px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.05)}
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:12px}
+.lab-item{background:white;border-radius:12px;padding:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04);font-size:11px}
+.lab-item i{font-size:22px;color:#0f4c75;display:block;margin-bottom:6px}
+.lab-main{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:white;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px}
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;padding:0 20px}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}}
+.box{background:white;border-radius:16px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.05)}
+.input{width:100%;padding:9px;border-radius:8px;border:1px solid #e2e8f0;margin:5px 0;font-size:12px}
+.btn-send{background:#0f4c75;color:white;padding:10px;border-radius:10px;border:0;width:100%;font-weight:800;cursor:pointer}
+.gallery3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery3 .g{border-radius:10px;overflow:hidden;background:white;box-shadow:0 2px 8px rgba(0,0,0,.06);font-size:10px;text-align:center}
+.gallery3 .g img{width:100%;height:80px;object-fit:cover}
+.footer{background:linear-gradient(135deg,#0f172a,#0b3d5f);color:#cbd5e1;padding:18px 20px;font-size:11px;text-align:center;margin-top:20px}
 </style>
 </head>
 <body>
 
-<div class="header-official">
-<h4>وزارة التربية والتعليم العالي - دولة فلسطين</h4>
-<h4>مديرية التربية والتعليم - سلفيت</h4>
-<h2>مدرسة ذكور زيتا جماعين الثانوية</h2>
-<h1>🔬 موقع اللجنة العلمية</h1>
-<p style="margin:10px 0 0;font-size:12px;opacity:0.85">إعداد: اللجنة العلمية | زيتا جماعين - فلسطين</p>
+<div class="top-bar">
+<div>دولة فلسطين<br>وزارة التربية والتعليم العالي<br>مديرية التربية والتعليم - سلفيت<br>مدرسة ذكور زيتا جماعين الثانوية</div>
+<div class="left">🇵🇸</div>
+</div>
+<div class="nav">
+<span><i class="fa fa-home"></i> الرئيسية</span>
+<span>عن اللجنة</span>
+<span>الأقسام</span>
+<span>المحاكاة والتجارب</span>
+<span>المسابقة الأسبوعية</span>
+<span>أعمال الطلبة</span>
+<span>اتصل بنا</span>
 </div>
 
-<div class="container">
-
-<!-- معلومات المدرسة واللجنة -->
-<div class="info-grid">
-<div class="info-card" style="border-color:#0f4c75">
-<h3>🏫 رؤية المدرسة</h3>
-<p>مدرسة رائدة في إنتاج المعرفة العلمية وترسيخ القيم، لإعداد جيل مبدع قادر على مواكبة التطور التكنولوجي.</p>
-</div>
-<div class="info-card" style="border-color:#1a936f">
-<h3>🔬 رؤية اللجنة العلمية</h3>
-<p>تحويل العلوم من نظريات على الورق إلى تجارب حية وتفاعلية، وجعل الطالب هو العالم والباحث.</p>
-</div>
-<div class="info-card" style="border-color:#8b5cf6">
-<h3>📋 خطة اللجنة</h3>
-<p>1- مختبرات افتراضية تفاعلية<br>2- مسابقات علمية<br>3- مشاريع بحثية للطلبة<br>4- ربط المنهاج بالواقع</p>
-</div>
-<div class="info-card" style="border-color:#f59e0b">
-<h3>🎯 أهدافنا</h3>
-<p>تنمية التفكير النقدي، حب الاستطلاع، مهارات البحث العلمي، وتوظيف التكنولوجيا في التعليم.</p>
-</div>
+<div class="hero">
+<img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" style="position:absolute;right:-20px;top:20px;width:120px;transform:rotate(-8deg);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.3)">
+<h1>موقع اللجنة العلمية ⚛️</h1>
+<h2>في مدرسة ذكور زيتا جماعين الثانوية</h2>
+<p>معاً نحو جيل علمي مبدع يصنع المستقبل - أرض العلم والتاريخ والإبداع ... فلسطين</p>
+<a class="btn-green" href="#labs">اكتشف - جرب - تعلم <i class="fa fa-play"></i></a>
 </div>
 
-<div class="section-title">🧪 أقسام اللجنة العلمية - المختبرات التفاعلية</div>
-
-<div class="grid">
-
-<!-- 1. الرياضيات أول اشي زي ما طلبتي -->
-<div class="card" style="border-top:4px solid #f59e0b">
-<div class="sym">π ∑</div>
-<span style="font-size:28px">📐</span>
-<h3>الرياضيات - لغة الكون</h3>
-<p>من الخوارزمي إلى الذكاء الاصطناعي، الرياضيات هي أساس كل العلوم. هنا نتعلم الأرقام بطريقة مرئية وممتعة.<br><b>رموزنا:</b> $ \pi , \sum , \infty , \sqrt{x} $</p>
-<div style="background:#fffbeb;padding:10px;border-radius:10px;text-align:center;border:1px dashed #f59e0b;margin-top:10px">
-✨ قريباً: محاكاة الدائرة، النسبة والتناسب، الهندسة التفاعلية
-</div>
-<a class="btn btn-math" href="#">قريباً - مختبر الرياضيات</a>
+<div class="info-bar">
+<div><b><i class="fa fa-eye"></i> رؤية المدرسة</b> مدرسة رائدة في التعليم والإبداع، تُعدّ شخوص الطالب علمياً وخلقياً، وتبني جيلاً مفكراً ناقداً ونافعاً وخدمة المجتمع</div>
+<div><b><i class="fa fa-lightbulb"></i> رؤية اللجنة العلمية</b> أن تكون اللجنة العلمية منصة للابتكار والاستكشاف، تزرع البصيرة العلمية وتنمي المهارات العملية وتعز حب البحث العلمي لدى الطلبة</div>
+<div><b><i class="fa fa-file-lines"></i> خطة اللجنة العلمية</b></div>
+<div><b><i class="fa fa-bullseye"></i> أهداف اللجنة العلمية</b></div>
+<div><b><i class="fa fa-graduation-cap"></i> إعداد معلمات اللجنة العلمية</b> في مدرسة ذكور زيتا جماعين الثانوية</div>
 </div>
 
-<!-- 2. الفيزياء - مع كل شي طلبتيه -->
-<div class="card" style="border-top:4px solid #0ea5e9">
-<div class="sym">F=ma</div>
-<span style="font-size:28px">⚙️</span>
-<h3>الفيزياء - عالم القوة والحركة</h3>
-<p>قوانين نيوتن، الحركة، الطاقة. هنا تفهمي لماذا نحن لا نطير!<br><b>رموزنا:</b> $F=ma$ , $E=mc^2$ , $v=d/t$</p>
-
-<!-- زر الحركة الدائرية -->
-<a class="btn btn-physics" href="https://maharammal.my.canva.site/circularmotion" target="_blank">🌀 التجربة 1: الحركة الدائرية (Canva)</a>
-<!-- زر العلوم العام -->
-<a class="btn btn-science" href="https://maharammal.my.canva.site/c1fvcb0shmzjsrv1" target="_blank">🌍 التجربة 2: مختبر العلوم الشامل</a>
-
-<!-- محاكاة نيوتن الأول التفاعلية من تصميمك -->
-<div style="margin-top:14px;background:linear-gradient(135deg,#e0f2fe,#f0fdfa);padding:12px;border-radius:12px;border:2px solid #0ea5e9">
-<b style="font-size:14px;color:#0f4c75">🔬 محاكاة تفاعلية: قانون نيوتن الأول - القصور الذاتي</b>
-<p style="font-size:11px;color:#475569;margin:4px 0">اسحبي الكرة وشوفي كيف تستمر بالحركة إذا ما في احتكاك!</p>
-<canvas id="newton1"></canvas>
-<div style="display:flex;gap:8px;margin-top:8px">
-<button onclick="v=4;friction=0.002" style="flex:1;background:#0f4c75;color:white;border:0;padding:8px;border-radius:8px">بدون احتكاك</button>
-<button onclick="friction=0.04" style="flex:1;background:#ef4444;color:white;border:0;padding:8px;border-radius:8px">مع احتكاك</button>
-<button onclick="x=30;v=4" style="flex:1;background:white;border:1px solid #ccc;padding:8px;border-radius:8px">إعادة</button>
-</div>
-<p id="speedText" style="font-size:11px;color:#0f4c75;margin-top:6px"></p>
+<div class="section-title">أقسام اللجنة العلمية ⚛️</div>
+<div class="grid5">
+<div class="card-dept bg-math"><i class="fa fa-calculator" style="font-size:28px;color:#1a936f"></i><h3>الرياضيات</h3><p>المنطق - البرهان - التفاضل<br>التكامل - الإبداع</p><a class="btn-mini" href="#">استعرض القسم <i class="fa fa-arrow-left"></i></a></div>
+<div class="card-dept bg-phys"><i class="fa fa-atom" style="font-size:28px;color:#0ea5e9"></i><h3>الفيزياء</h3><p>الحركة - القوى - الطاقة<br>السقوط الحر - العزم</p><a class="btn-mini" href="#">استعرض القسم</a></div>
+<div class="card-dept bg-chem"><i class="fa fa-flask" style="font-size:28px;color:#f59e0b"></i><h3>الكيمياء</h3><p>التفاعلات - الجدول الدوري<br>سلسلة النشاط الكيميائي</p><a class="btn-mini" href="#">استعرض القسم</a></div>
+<div class="card-dept bg-bio"><i class="fa fa-dna" style="font-size:28px;color:#a855f7"></i><h3>الأحياء</h3><p>الخلية - الوراثة - الأجهزة الدقيقة<br>أجهزة الجسم</p><a class="btn-mini" href="#">استعرض القسم</a></div>
+<div class="card-dept bg-sci"><i class="fa fa-globe" style="font-size:28px;color:#16a34a"></i><h3>العلوم العامة</h3><p>البيئة - الفضاء - الطاقة<br>جسم الإنسان</p><a class="btn-mini" href="#">استعرض القسم</a></div>
 </div>
 
+<div class="lab-section" id="labs">
+<div class="section-title" style="margin:0">مختبر الفيزياء التفاعلي 🧪</div>
+<p style="text-align:center;font-size:12px;color:#64748b;margin-top:4px">اكتشف القوانين الفيزيائية من خلال التجربة والمحاكاة</p>
+<div class="lab-grid">
+<div class="lab-main" style="grid-column:span 2">
+<div style="flex:1"><b>F = m a</b><br><span style="font-size:12px">تجربة محاكاة تفاعلية<br>قانون نيوتن الأول</span><br><a href="https://maharammal.my.canva.site/circularmotion" target="_blank" style="background:#2ec4b6;color:white;padding:4px 10px;border-radius:20px;font-size:11px;text-decoration:none;margin-top:6px;display:inline-block">جرب الآن</a></div>
+<div style="font-size:40px">📦</div>
+</div>
+<div class="lab-item"><i class="fa fa-satellite"></i>قانون نيوتن الأول<br><a class="btn-mini" style="background:#0ea5e9" href="https://maharammal.my.canva.site/c1fvcb0shmzjsrv1" target="_blank">جرب الآن</a></div>
+<div class="lab-item"><i class="fa fa-circle-notch"></i>الحركة الدائرية<br><a class="btn-mini" style="background:#0ea5e9" href="https://maharammal.my.canva.site/circularmotion" target="_blank">جرب الآن</a></div>
+<div class="lab-item"><i class="fa fa-arrows-to-circle"></i>العزم<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
+<div class="lab-item"><i class="fa fa-arrow-down"></i>السقوط الحر<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
+<div class="lab-item"><i class="fa fa-wave-square"></i>الطاقة الحركية<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
+<div class="lab-item"><i class="fa fa-magnet"></i>المغناطيسية<br><span class="btn-mini" style="background:#94a3b8">جرب الآن</span></div>
+</div>
 </div>
 
-<!-- 3. الكيمياء -->
-<div class="card" style="border-top:4px solid #ec4899">
-<div class="sym">H₂O</div>
-<span style="font-size:28px">🧪</span>
-<h3>الكيمياء - تفاعل الحياة</h3>
-<p>من ذرة الهيدروجين إلى تفاعلات معقدة. كل شيء حولنا كيمياء!<br><b>رموزنا:</b> $H_2O$ , $NaCl$ , $CO_2$ , $pH$</p>
-<div style="background:#fdf2f8;padding:10px;border-radius:10px;text-align:center;border:1px dashed #ec4899;margin-top:10px">
-🧪 قريباً: جدول دوري تفاعلي، موازنة المعادلات
+<div class="two-col">
+<div class="box">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3>🏆 المسابقة الأسبوعية</h3><span style="font-size:11px;background:#fef3c7;padding:3px 8px;border-radius:20px">سؤال الأسبوع</span></div>
+<p id="qTitle" style="font-size:13px;font-weight:800;margin:10px 0">لماذا يطفو الجليد فوق الماء؟</p>
+<p id="qText" style="font-size:12px;line-height:1.9;color:#475569">الماء حالة غريبة! الجليد أقل كثافة من السائل. صوري تجربة: كأس ماء + ثلج + حجر. ليش الثلج بطفو والحجر بغوص؟ ما علاقة الكثافة والروابط الهيدروجينية؟</p>
+<div style="margin:10px 0;font-size:12px">
+<label><input type="radio" name="opt"> يطفو دون قوة</label><br>
+<label><input type="radio" name="opt"> يستمر بسرعته الثابتة في خط مستقيم</label><br>
+<label><input type="radio" name="opt"> تزداد سرعته تلقائياً</label>
 </div>
-<a class="btn" style="background:linear-gradient(135deg,#ec4899,#be185d);color:white" href="#">قريباً - مختبر الكيمياء</a>
+<div style="background:#f8fafc;padding:10px;border-radius:10px">
+<input id="ansName" class="input" placeholder="اسم الطالب">
+<select class="input"><option>اختر الصف والشعبة</option><option>السابع</option><option>الثامن</option><option>التاسع</option><option>العاشر</option></select>
+<input id="ansText" class="input" placeholder="فسر إجابتك">
+<input id="ansFile" type="file" accept="image/*" class="input">
+<button onclick="sendAns()" class="btn-send">🚀 إرسال الإجابة</button>
+<p id="ansMsg" style="font-size:11px;color:green;margin-top:6px"></p>
+<p style="font-size:10px;color:#94a3b8;margin-top:6px">بإرسالك هذا النموذج، أنت توافق على شروط المسابقة</p>
+</div>
+<div style="margin-top:8px"><button onclick="changeQ()" style="font-size:10px;background:none;border:1px dashed #f59e0b;padding:4px 8px;border-radius:8px;cursor:pointer">⚙️ تغيير السؤال (للمعلمة - zita2026)</button> <button onclick="showAns()" style="font-size:10px;background:#0f172a;color:white;padding:4px 8px;border-radius:8px;border:0;cursor:pointer">🔒 عرض الإجابات</button></div>
+<div id="ansList" style="display:none;margin-top:10px"></div>
 </div>
 
-<!-- 4. الأحياء -->
-<div class="card" style="border-top:4px solid #22c55e">
-<div class="sym">DNA</div>
-<span style="font-size:28px">🧬</span>
-<h3>الأحياء - سر الحياة</h3>
-<p>الخلية، الـ DNA، جسم الإنسان، النظام البيئي. رحلة داخل الكائن الحي!<br><b>رموزنا:</b> $DNA$ , $RNA$ , $ATP$</p>
-<div style="background:#f0fdf4;padding:10px;border-radius:10px;text-align:center;border:1px dashed #22c55e;margin-top:10px">
-🧬 قريباً: تشريح الخلية، دورة الدم
+<div class="box">
+<h3>🎯 أعمال الطلبة وتجاربهم <span style="float:left;font-size:10px;color:#0ea5e9;cursor:pointer">عرض الكل</span></h3>
+<div class="gallery3" style="margin-top:10px">
+<div class="g"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=300"><p>دفيئة علمية</p><span style="background:#22c55e;color:white;padding:2px 6px;border-radius:10px;font-size:9px">استعرض</span></div>
+<div class="g"><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=300"><p>معرض التجارب</p><span style="background:#22c55e;color:white;padding:2px 6px;border-radius:10px">استعرض</span></div>
+<div class="g"><img src="https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=300"><p>مشاريع وابتكارات</p><span style="background:#22c55e;color:white;padding:2px 6px;border-radius:10px">استعرض</span></div>
 </div>
-<a class="btn" style="background:linear-gradient(135deg,#16a34a,#22c55e);color:white" href="#">قريباً - مختبر الأحياء</a>
+<h3 style="margin-top:16px">🎯 أهداف اللجنة وخطتها</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;font-size:11px;line-height:1.8">
+<div style="background:#f0f9ff;padding:8px;border-radius:10px">✔ بناء التفكير النقدي والاستقصائي العلمي<br>✔ تعزيز المهارات العملية والتجريب<br>✔ تشجيع البحث والابتكار<br>✔ تنمية العمل الجماعي والمشاركة<br>✔ تحفيز الفضول العلمي والابتكار</div>
+<div style="background:#fefce8;padding:8px;border-radius:10px">✔ إطلاق موقع اللجنة وتفعيل الأقسام<br>✔ تنظيم مسابقة العلوم الشهرية<br>✔ تنظيم معرض علوم مصغر وهجين على شكل تجارب<br>✔ تنفيذ ورش عمل ومسابقات علمية<br>✔ توثيق الإنجازات وتقديم النشطة</div>
 </div>
-
+<div style="margin-top:10px;background:#f8fafc;padding:10px;border-radius:10px">
+<h4>📸 جدار إنجازات الطلاب - ارفع تجربتك</h4>
+<input id="stName" class="input" placeholder="اسمك + الصف">
+<input id="stTitle" class="input" placeholder="عنوان التجربة">
+<input id="stFile" type="file" accept="image/*" class="input">
+<button onclick="up()" class="btn-send" style="background:#1a936f">نشر ✅</button>
+<p id="upMsg" style="font-size:11px;color:green"></p>
+<div id="gallery" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px"></div>
+</div>
 </div>
 </div>
 
 <div class="footer">
-© 2026 موقع اللجنة العلمية - مدرسة ذكور زيتا جماعين الثانوية<br>
-مديرية التربية والتعليم - سلفيت | وزارة التربية والتعليم العالي - فلسطين<br>
-تصميم وإعداد: اللجنة العلمية
+من فلسطين ... نبدأ والتعلم ❤️<br>
+جميع الحقوق محفوظة © 2026 مدرسة ذكور زيتا جماعين الثانوية
 </div>
 
 <script>
-// محاكاة نيوتن الأول
-let c=document.getElementById('newton1'), ctx=c.getContext('2d'), x=30, v=4, friction=0.002;
-function resize(){c.width=c.clientWidth}
-resize(); window.addEventListener('resize',resize);
-(function loop(){
-ctx.clearRect(0,0,c.width,c.height);
-ctx.fillStyle='#e0f2fe'; ctx.fillRect(0,130,c.width,3);
-ctx.fillStyle='#0f4c75'; ctx.beginPath(); ctx.arc(x,120,14,0,Math.PI*2); ctx.fill();
-ctx.fillStyle='#0ea5e9'; ctx.fillRect(x-14,106,28,4);
-x+=v; v*= (1-friction);
-if(x>c.width-14||x<14){v*=-0.9; x=Math.max(14,Math.min(c.width-14,x))}
-document.getElementById('speedText').textContent='السرعة: '+Math.abs(v).toFixed(2)+' | الاحتكاك: '+friction+' | قانون نيوتن الأول: الجسم يحافظ على حركته';
-requestAnimationFrame(loop);
-})();
+let comp=JSON.parse(localStorage.getItem('comp')||'{"title":"لماذا يطفو الجليد فوق الماء؟","text":"الماء حالة غريبة! الجليد أقل كثافة من السائل. صوري تجربة: كأس ماء + ثلج + حجر. ليش الثلج بطفو والحجر بغوص؟ ما علاقة الكثافة والروابط الهيدروجينية؟"}');
+document.getElementById('qTitle').textContent=comp.title; document.getElementById('qText').textContent=comp.text;
+let answers=JSON.parse(localStorage.getItem('answers')||'[]');
+function sendAns(){let f=document.getElementById('ansFile').files[0];let n=document.getElementById('ansName').value||'طالب';let t=document.getElementById('ansText').value;if(!t&&!f){alert('اكتب إجابة');return}if(f){let r=new FileReader();r.onload=e=>{answers.push({name:n,text:t,img:e.target.result,time:new Date().toLocaleString('ar-PS')});localStorage.setItem('answers',JSON.stringify(answers));document.getElementById('ansMsg').textContent='✅ تم الإرسال'};r.readAsDataURL(f)}else{answers.push({name:n,text:t,img:'',time:new Date().toLocaleString('ar-PS')});localStorage.setItem('answers',JSON.stringify(answers));document.getElementById('ansMsg').textContent='✅ تم الإرسال'}}
+function changeQ(){if(prompt('كلمة السر:')!=='zita2026'){alert('خطأ');return}let t=prompt('عنوان:',comp.title);let d=prompt('نص:',comp.text);if(t){comp.title=t;comp.text=d;localStorage.setItem('comp',JSON.stringify(comp));location.reload()}}
+function showAns(){if(prompt('كلمة السر:')!=='zita2026'){alert('خطأ');return}let div=document.getElementById('ansList');div.style.display='block';div.innerHTML='';answers.slice().reverse().forEach(a=>{div.innerHTML+=`<div style="border:1px solid #eee;padding:8px;border-radius:8px;margin-bottom:6px;background:white"><b>${a.name}</b><p style="font-size:12px">${a.text}</p>${a.img?`<img src="${a.img}" style="width:100%;border-radius:6px">`:''}</div>`})}
+let gal=JSON.parse(localStorage.getItem('gal')||'[]');function render(){let g=document.getElementById('gallery');g.innerHTML='';gal.slice().reverse().forEach(it=>{g.innerHTML+=`<div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.06)"><img src="${it.img}" style="width:100%;height:70px;object-fit:cover"><div style="padding:4px;font-size:10px"><b>${it.title}</b><br>${it.name}</div></div>`})}render();
+function up(){let f=document.getElementById('stFile').files[0];if(!f){alert('اختاري صورة');return}let r=new FileReader();r.onload=e=>{gal.push({name:document.getElementById('stName').value,title:document.getElementById('stTitle').value,img:e.target.result});localStorage.setItem('gal',JSON.stringify(gal));render();document.getElementById('upMsg').textContent='✅ تم النشر'};r.readAsDataURL(f)}
 </script>
 </body>
 </html>
