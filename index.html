@@ -16,7 +16,7 @@
   --accent-chem:#d946ef;
   --accent-bio:#22c55e;
   --accent-science:#6366f1;
-  --card-bg:rgba(255, 255, 255, 0.93);
+  --card-bg:rgba(255, 255, 255, 0.95);
   --text:#0f172a;
   --text-muted:#334155;
 }
@@ -32,7 +32,7 @@ body{
   min-height:100vh;
 }
 
-/* خلفية حيوية مزخرفة بالرموز والمعادلات وطبيعة العلم */
+/* خلفية حيوية بوعاء من المعادلات والرموز العلمية */
 body::before {
   content: "E=mc²   πr²   H₂O   ∫f(x)dx   DNA   F=ma   λ   pH   C₆H₁₂O₆   ∇×B   NaCl   ∑n   E=hν   τ=F·r";
   position: fixed;
@@ -79,7 +79,7 @@ body::before {
 .slogan{margin-top:14px;font-size:16px;font-weight:800;color:#fef08a;letter-spacing:0.5px;text-shadow:0 1px 2px rgba(0,0,0,0.3)}
 
 /* Container */
-.container{max-width:1200px;margin:auto;padding:25px 15px}
+.container{max-width:1250px;margin:auto;padding:25px 15px}
 
 /* Info Cards */
 .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-bottom:30px}
@@ -121,7 +121,7 @@ body::before {
 }
 .teacher-item:hover{transform:scale(1.03);border-color:var(--secondary)}
 
-/* Sections Tabs */
+/* Sections Title */
 .section-header{
   font-size:24px;
   font-weight:900;
@@ -235,18 +235,20 @@ body::before {
 
 /* Interactive Lab Section */
 .lab-section{margin-top:45px}
-.sim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:20px}
+.sim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:24px;margin-top:20px}
 .sim-card{
   background:white;
-  border-radius:20px;
-  padding:22px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
   border:2px solid #e2e8f0;
+  transition:0.3s;
 }
-.sim-card h3{font-size:17px;color:var(--primary-dark);margin-bottom:10px;font-weight:800}
-canvas{width:100%;height:190px;background:#0f172a;border-radius:14px;display:block;margin:12px 0}
+.sim-card:hover{border-color:var(--primary);box-shadow:0 12px 35px rgba(2,132,199,0.12)}
+.sim-card h3{font-size:18px;color:var(--primary-dark);margin-bottom:8px;font-weight:800}
+canvas{width:100%;height:220px;background:#0f172a;border-radius:16px;display:block;margin:12px 0}
 .controls{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center}
-.controls button, .controls input{
+.controls button, .controls input, .controls select{
   padding:8px 14px;
   border-radius:10px;
   border:1px solid #cbd5e1;
@@ -255,6 +257,17 @@ canvas{width:100%;height:190px;background:#0f172a;border-radius:14px;display:blo
 }
 .controls button{background:var(--primary);color:white;cursor:pointer;border:none;transition:0.3s}
 .controls button:hover{background:var(--primary-dark)}
+
+.info-display{
+  font-size:13px;
+  font-weight:800;
+  color:var(--primary-dark);
+  margin-top:8px;
+  padding:8px 12px;
+  background:#f0f9ff;
+  border-radius:10px;
+  border-right:4px solid var(--primary);
+}
 
 /* Quiz Section */
 .quiz-card{
@@ -565,7 +578,7 @@ canvas{width:100%;height:190px;background:#0f172a;border-radius:14px;display:blo
       </div>
     </div>
 
-    <!-- Virtual Interactive Lab Section -->
+    <!-- Interactive Lab Section -->
     <div class="lab-section">
       <div class="section-header">🔬 المختبر الافتراضي المحاكي للتجارب</div>
       
@@ -573,34 +586,87 @@ canvas{width:100%;height:190px;background:#0f172a;border-radius:14px;display:blo
         <!-- 1. Torque Sim -->
         <div class="sim-card">
           <h3>📐 محاكاة عزم القوة (Torque)</h3>
-          <p style="font-size:13px;color:var(--text-muted);font-weight:600">غير مقدار القوة لرؤية تأثيرها على العزم الدوراني $\tau$</p>
+          <p style="font-size:12px;color:var(--text-muted)">تحكم بطول الذراع والقوة وزاوية التطبيق $\tau = F \cdot r \cdot \sin(\theta)$</p>
           <canvas id="torqueCanvas"></canvas>
           <div class="controls">
-            <label style="font-size:12px;font-weight:700">القوة: <input type="range" id="fRange" min="1" max="10" value="5" oninput="drawTorque()"></label>
-            <button onclick="drawTorque()">إعادة التشغيل</button>
+            <label style="font-size:11px">القوة (F): <input type="range" id="fRange" min="1" max="10" value="5" oninput="drawTorque()"></label>
+            <label style="font-size:11px">الذراع (r): <input type="range" id="rRange" min="50" max="150" value="100" oninput="drawTorque()"></label>
+            <label style="font-size:11px">الزاوية (θ): <input type="range" id="angRange" min="15" max="90" value="90" oninput="drawTorque()"></label>
           </div>
-          <div id="torqueVal" style="font-size:13px;font-weight:800;color:var(--primary-dark);margin-top:8px"></div>
+          <div id="torqueVal" class="info-display"></div>
         </div>
 
         <!-- 2. Quadratic Parabola Sim -->
         <div class="sim-card">
           <h3>📈 محاكاة انسحاب وانعكاس الاقتران التربيعي</h3>
-          <p style="font-size:13px;color:var(--text-muted);font-weight:600">$f(x) = a(x-h)^2 + k$</p>
+          <p style="font-size:12px;color:var(--text-muted)">$f(x) = a(x-h)^2 + k$</p>
           <canvas id="mathCanvas"></canvas>
           <div class="controls">
-            <label style="font-size:11px;font-weight:700">a: <input type="range" id="aRange" min="-3" max="3" step="1" value="1" oninput="drawMath()"></label>
-            <label style="font-size:11px;font-weight:700">h: <input type="range" id="hRange" min="-5" max="5" value="0" oninput="drawMath()"></label>
-            <label style="font-size:11px;font-weight:700">k: <input type="range" id="kRange" min="-5" max="5" value="0" oninput="drawMath()"></label>
+            <label style="font-size:11px">a (انعكاس/تمدد): <input type="range" id="aRange" min="-3" max="3" step="1" value="1" oninput="drawMath()"></label>
+            <label style="font-size:11px">h (أفقي): <input type="range" id="hRange" min="-5" max="5" value="0" oninput="drawMath()"></label>
+            <label style="font-size:11px">k (رأسي): <input type="range" id="kRange" min="-5" max="5" value="0" oninput="drawMath()"></label>
           </div>
+          <div id="mathVal" class="info-display"></div>
         </div>
 
         <!-- 3. Plant Cell Sim -->
         <div class="sim-card">
           <h3>🧬 محاكاة الخلية النباتية التفاعلية</h3>
-          <p style="font-size:13px;color:var(--text-muted);font-weight:600">عضيات ومكونات الخلية النباتية الرئيسية</p>
-          <canvas id="cellCanvas"></canvas>
-          <div id="cellInfo" style="font-size:13px;font-weight:800;color:var(--secondary-dark);margin-top:8px">مكونات الخلية: جدار الخلية، الفجوة، النواة، البلاستيدات الخضراء</div>
+          <p style="font-size:12px;color:var(--text-muted)">انقر على أجزاء الخلية لاستكشاف خصائص العضيات</p>
+          <canvas id="cellCanvas" style="cursor:pointer"></canvas>
+          <div id="cellInfo" class="info-display">انقر على المكونات الخلوية لمعرفة وظائفها</div>
         </div>
+
+        <!-- 4. Projectile Motion Sim -->
+        <div class="sim-card">
+          <h3>🚀 محاكاة حركة المقذوفات (Projectile)</h3>
+          <p style="font-size:12px;color:var(--text-muted)">إطلاق جسم بزاوية وسرعة ابتدائية لحساب المدى والارتفاع</p>
+          <canvas id="projCanvas"></canvas>
+          <div class="controls">
+            <label style="font-size:11px">السرعة ($v_0$): <input type="range" id="vRange" min="20" max="60" value="40"></label>
+            <label style="font-size:11px">الزاوية ($\theta$): <input type="range" id="pAngRange" min="15" max="75" value="45"></label>
+            <button onclick="launchProjectile()">🚀 إطلاق</button>
+          </div>
+          <div id="projVal" class="info-display">اضغط إطلاق لبدء حركة المقذوف</div>
+        </div>
+
+        <!-- 5. Free Fall Sim -->
+        <div class="sim-card">
+          <h3>🍎 محاكاة السقوط الحر (Free Fall)</h3>
+          <p style="font-size:12px;color:var(--text-muted)">حركة الجسم تحت تأثير الجاذبية الأرضية $g = 9.8\,m/s^2$</p>
+          <canvas id="fallCanvas"></canvas>
+          <div class="controls">
+            <button onclick="startFreeFall()">🍎 إسقاط الجسم</button>
+            <button onclick="resetFreeFall()">إعادة ضبط</button>
+          </div>
+          <div id="fallVal" class="info-display">اضغط إسقاط لمراقبة التسارع</div>
+        </div>
+
+        <!-- 6. Chemical Reaction Sim -->
+        <div class="sim-card">
+          <h3>🧪 محاكاة التفاعل والتصادم الكيميائي</h3>
+          <p style="font-size:12px;color:var(--text-muted)">حركة الجزيئات والتصادمات الفعالة لتكوين النواتج</p>
+          <canvas id="chemCanvas"></canvas>
+          <div class="controls">
+            <label style="font-size:11px">حرارة التفاعل: <input type="range" id="tempRange" min="1" max="10" value="5" oninput="updateChemTemp()"></label>
+            <button onclick="resetChem()">إعادة خلط</button>
+          </div>
+          <div id="chemVal" class="info-display">تزيد السرعة والتصادمات بزيادة الحرارة</div>
+        </div>
+
+        <!-- 7. Logic Gates Sim -->
+        <div class="sim-card">
+          <h3>💡 محاكاة المنطق الرياضي (Logic Gates)</h3>
+          <p style="font-size:12px;color:var(--text-muted)">اختبار البوابات المنطقية وجدول الحقيقة (Logic Truth)</p>
+          <canvas id="logicCanvas"></canvas>
+          <div class="controls">
+            <label style="font-size:11px">المدخل A: <select id="inA" onchange="drawLogic()"><option value="0">0 (إيقاف)</option><option value="1">1 (تشغيل)</option></select></label>
+            <label style="font-size:11px">المدخل B: <select id="inB" onchange="drawLogic()"><option value="0">0 (إيقاف)</option><option value="1">1 (تشغيل)</option></select></label>
+            <label style="font-size:11px">البوابة: <select id="gateType" onchange="drawLogic()"><option value="AND">AND</option><option value="OR">OR</option><option value="XOR">XOR</option></select></label>
+          </div>
+          <div id="logicVal" class="info-display">المخرج الناتج يظهر تفاعلياً</div>
+        </div>
+
       </div>
     </div>
 
@@ -669,63 +735,66 @@ canvas{width:100%;height:190px;background:#0f172a;border-radius:14px;display:blo
 </div>
 
 <script>
-// Tab Switching Script
+// Tab Switching
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
+  for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
   tablinks = document.getElementsByClassName("tab-btn");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
+  for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
   document.getElementById(tabName).classList.add("active");
   evt.currentTarget.classList.add("active");
 }
 
-// 1. Interactive Torque Simulation
+// 1. Torque Simulation
+let torqueAngleAnim = 0;
 function drawTorque(){
-  let c = document.getElementById('torqueCanvas');
-  if(!c) return;
+  let c = document.getElementById('torqueCanvas'); if(!c) return;
   let ctx = c.getContext('2d');
-  c.width = c.clientWidth; c.height = 190;
+  c.width = c.clientWidth; c.height = 220;
   ctx.clearRect(0,0,c.width,c.height);
 
-  let force = parseFloat(document.getElementById('fRange').value);
-  let pivotX = 60, pivotY = 105, length = 170;
+  let F = parseFloat(document.getElementById('fRange').value);
+  let r = parseFloat(document.getElementById('rRange').value);
+  let deg = parseFloat(document.getElementById('angRange').value);
+  let rad = deg * Math.PI / 180;
+
+  let pivotX = 80, pivotY = 150;
+  let endX = pivotX + r;
+  let endY = pivotY;
+
+  // Grid background
+  ctx.strokeStyle = '#1e293b'; ctx.lineWidth = 1;
+  for(let x=0; x<c.width; x+=20){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,c.height); ctx.stroke(); }
 
   // Pivot Point
-  ctx.fillStyle = '#ef4444';
-  ctx.beginPath(); ctx.arc(pivotX, pivotY, 9, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#ef4444'; ctx.beginPath(); ctx.arc(pivotX, pivotY, 10, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#ffffff'; ctx.font = '10px Tajawal'; ctx.fillText('محور الدوران', pivotX-25, pivotY+25);
 
-  // Rod
-  ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 10;
-  ctx.beginPath(); ctx.moveTo(pivotX, pivotY); ctx.lineTo(pivotX + length, pivotY); ctx.stroke();
+  // Lever Arm
+  ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 8; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(pivotX, pivotY); ctx.lineTo(endX, endY); ctx.stroke();
 
-  // Force Arrow
-  let arrowX = pivotX + length;
-  let arrowLength = force * 9;
-  ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 5;
-  ctx.beginPath(); ctx.moveTo(arrowX, pivotY); ctx.lineTo(arrowX, pivotY - arrowLength); ctx.stroke();
+  // Force Arrow Vector
+  let fx = endX - (F * 12) * Math.cos(rad);
+  let fy = endY - (F * 12) * Math.sin(rad);
 
-  // Arrowhead
-  ctx.fillStyle = '#f59e0b';
-  ctx.beginPath();
-  ctx.moveTo(arrowX - 8, pivotY - arrowLength + 8);
-  ctx.lineTo(arrowX + 8, pivotY - arrowLength + 8);
-  ctx.lineTo(arrowX, pivotY - arrowLength - 4);
-  ctx.fill();
+  ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 4;
+  ctx.beginPath(); ctx.moveTo(endX, endY); ctx.lineTo(fx, fy); ctx.stroke();
 
-  document.getElementById('torqueVal').textContent = 'مقدار العزم المحسوب: ' + (force * 1.5).toFixed(1) + ' N.m';
+  // Arrow Head
+  ctx.fillStyle = '#f59e0b'; ctx.beginPath();
+  ctx.arc(fx, fy, 6, 0, Math.PI*2); ctx.fill();
+
+  let torque = F * (r/100) * Math.sin(rad);
+  document.getElementById('torqueVal').textContent = `العزم (τ) = ${torque.toFixed(2)} N·m | القوة: ${F}N | الذراع: ${(r/100).toFixed(2)}m | الزاوية: ${deg}°`;
 }
 
-// 2. Interactive Parabola Math Simulation
+// 2. Parabola Math Simulation
 function drawMath(){
-  let c = document.getElementById('mathCanvas');
-  if(!c) return;
+  let c = document.getElementById('mathCanvas'); if(!c) return;
   let ctx = c.getContext('2d');
-  c.width = c.clientWidth; c.height = 190;
+  c.width = c.clientWidth; c.height = 220;
   ctx.clearRect(0,0,c.width,c.height);
 
   let a = parseFloat(document.getElementById('aRange').value);
@@ -734,51 +803,235 @@ function drawMath(){
 
   let cx = c.width/2, cy = c.height/2;
 
-  // Axes
+  // Coordinate Axes
   ctx.strokeStyle = '#475569'; ctx.lineWidth = 1.5;
   ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(c.width, cy); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, c.height); ctx.stroke();
 
-  // Curve
-  ctx.strokeStyle = '#06b6d4'; ctx.lineWidth = 3.5;
+  // Draw Grid Marks
+  ctx.fillStyle = '#64748b'; ctx.font = '10px Tajawal';
+  for(let x=-5; x<=5; x++){ if(x!==0) ctx.fillText(x, cx + x*20 - 4, cy + 14); }
+
+  // Quadratic Parabola Curve
+  ctx.strokeStyle = a < 0 ? '#ef4444' : '#06b6d4'; ctx.lineWidth = 3.5;
   ctx.beginPath();
+  let first = true;
   for(let px = -cx; px < cx; px += 1){
-    let x = px / 15;
+    let x = px / 20;
     let y = a * Math.pow(x - h, 2) + k;
     let canvasX = cx + px;
-    let canvasY = cy - (y * 15);
-    if(px === -cx) ctx.moveTo(canvasX, canvasY);
+    let canvasY = cy - (y * 20);
+    if(first) { ctx.moveTo(canvasX, canvasY); first = false; }
     else ctx.lineTo(canvasX, canvasY);
   }
   ctx.stroke();
+
+  // Vertex Point (h, k)
+  let vx = cx + h*20, vy = cy - k*20;
+  ctx.fillStyle = '#f59e0b'; ctx.beginPath(); ctx.arc(vx, vy, 6, 0, Math.PI*2); ctx.fill();
+
+  let orient = a < 0 ? 'مفتوح للأسفل (انعكاس)' : (a > 0 ? 'مفتوح للأعلى' : 'خط مستقيم');
+  document.getElementById('mathVal').textContent = `الرأس: (${h}, ${k}) | الاتجاه: ${orient} | a = ${a}`;
 }
 
-// 3. Interactive Plant Cell Simulation
+// 3. Plant Cell Interactive
 function drawCell(){
-  let c = document.getElementById('cellCanvas');
-  if(!c) return;
+  let c = document.getElementById('cellCanvas'); if(!c) return;
   let ctx = c.getContext('2d');
-  c.width = c.clientWidth; c.height = 190;
+  c.width = c.clientWidth; c.height = 220;
   ctx.clearRect(0,0,c.width,c.height);
 
   // Cell Wall (Outer green)
-  ctx.fillStyle = '#15803d';
-  ctx.fillRect(20, 20, c.width - 40, 150);
-  ctx.fillStyle = '#86efac';
-  ctx.fillRect(28, 28, c.width - 56, 134);
+  ctx.fillStyle = '#15803d'; ctx.fillRect(20, 15, c.width-40, 190);
+  ctx.fillStyle = '#86efac'; ctx.fillRect(30, 25, c.width-60, 170);
 
-  // Vacuole (Blue)
-  ctx.fillStyle = '#38bdf8';
-  ctx.beginPath(); ctx.ellipse(c.width/2, 95, 65, 38, 0, 0, Math.PI*2); ctx.fill();
+  // Cytoplasm
+  ctx.fillStyle = '#dcfce7'; ctx.fillRect(38, 33, c.width-76, 154);
 
-  // Nucleus (Purple)
-  ctx.fillStyle = '#a855f7';
-  ctx.beginPath(); ctx.arc(75, 75, 22, 0, Math.PI*2); ctx.fill();
+  // Central Vacuole
+  ctx.fillStyle = '#38bdf8'; ctx.beginPath();
+  ctx.ellipse(c.width/2 + 20, 110, 75, 45, 0, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#ffffff'; ctx.font = '11px Tajawal'; ctx.fillText('فجوة عصارية', c.width/2 - 10, 114);
 
-  // Chloroplasts (Dark Green)
+  // Nucleus
+  ctx.fillStyle = '#a855f7'; ctx.beginPath(); ctx.arc(85, 80, 25, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#6b21a8'; ctx.beginPath(); ctx.arc(85, 80, 10, 0, Math.PI*2); ctx.fill(); // Nucleolus
+  ctx.fillStyle = '#ffffff'; ctx.fillText('النواة', 73, 84);
+
+  // Chloroplasts
   ctx.fillStyle = '#16a34a';
-  ctx.beginPath(); ctx.arc(c.width - 70, 65, 12, 0, Math.PI*2); ctx.fill();
-  ctx.beginPath(); ctx.arc(c.width - 85, 125, 12, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(80, 155, 18, 10, Math.PI/4, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(c.width - 80, 60, 18, 10, -Math.PI/4, 0, Math.PI*2); ctx.fill();
+}
+
+document.getElementById('cellCanvas').addEventListener('click', function(e){
+  let rect = this.getBoundingClientRect();
+  let x = e.clientX - rect.left, y = e.clientY - rect.top;
+  let info = document.getElementById('cellInfo');
+
+  if(x < 40 || x > this.width-40 || y < 25 || y > this.height-25) {
+    info.textContent = '🟩 الجدار الخلوي: يتكون من السليلوز ويوفر الدعم الحماية والشكل المحدّد للخلية النباتية.';
+  } else if(Math.hypot(x - 85, y - 80) < 25) {
+    info.textContent = '🟣 النواة: تحتوي المادة الوراثية (DNA) وتدير الأنشطة والعمليات الحيوية للخلية.';
+  } else if(Math.hypot(x - (this.width/2 + 20), y - 110) < 50) {
+    info.textContent = '💧 الفجوة العصارية: تخزن الماء والأملاح والمواد الغذائية وتحافظ على الضغط الأسموزي.';
+  } else {
+    info.textContent = '🍃 البلاستيدات الخضراء: تحتوي الكلوروفيل وتقوم بعملية البناء الضوئي لإنتاج الغذاء.';
+  }
+});
+
+// 4. Projectile Motion Simulation
+let projAnim;
+function launchProjectile(){
+  cancelAnimationFrame(projAnim);
+  let c = document.getElementById('projCanvas'); if(!c) return;
+  let ctx = c.getContext('2d');
+  c.width = c.clientWidth; c.height = 220;
+
+  let v0 = parseFloat(document.getElementById('vRange').value);
+  let deg = parseFloat(document.getElementById('pAngRange').value);
+  let rad = deg * Math.PI / 180;
+  let g = 9.8;
+
+  let vx = v0 * Math.cos(rad);
+  let vy0 = v0 * Math.sin(rad);
+
+  let t = 0;
+  let path = [];
+
+  function step(){
+    t += 0.15;
+    let x = vx * t;
+    let y = vy0 * t - 0.5 * g * t * t;
+
+    let cx = 30 + x * 2.5;
+    let cy = 190 - y * 2.5;
+
+    ctx.clearRect(0, 0, c.width, c.height);
+
+    // Ground
+    ctx.strokeStyle = '#10b981'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(0, 190); ctx.lineTo(c.width, 190); ctx.stroke();
+
+    // Trajectory Path
+    path.push({x: cx, y: cy});
+    ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 2;
+    ctx.beginPath();
+    for(let p of path){ ctx.lineTo(p.x, p.y); }
+    ctx.stroke();
+
+    // Cannonball
+    if(cy <= 190){
+      ctx.fillStyle = '#ef4444'; ctx.beginPath(); ctx.arc(cx, cy, 7, 0, Math.PI*2); ctx.fill();
+      let maxH = (vy0 * vy0) / (2 * g);
+      let range = (v0 * v0 * Math.sin(2*rad)) / g;
+      document.getElementById('projVal').textContent = `الارتفاع الأقصى: ${maxH.toFixed(1)}m | المدى الأفقي: ${range.toFixed(1)}m`;
+      projAnim = requestAnimationFrame(step);
+    } else {
+      ctx.fillStyle = '#ef4444'; ctx.beginPath(); ctx.arc(cx, 190, 7, 0, Math.PI*2); ctx.fill();
+    }
+  }
+  step();
+}
+
+// 5. Free Fall Simulation
+let fallAnim, fallY = 30, fallV = 0;
+function startFreeFall(){
+  cancelAnimationFrame(fallAnim);
+  let c = document.getElementById('fallCanvas'); if(!c) return;
+  let ctx = c.getContext('2d');
+  c.width = c.clientWidth; c.height = 220;
+
+  let g = 0.4; fallY = 30; fallV = 0;
+  function animate(){
+    fallV += g;
+    fallY += fallV;
+    ctx.clearRect(0,0,c.width,c.height);
+
+    // Height markers
+    ctx.strokeStyle = '#334155'; ctx.lineWidth = 1;
+    for(let h=30; h<190; h+=30){ ctx.beginPath(); ctx.moveTo(20, h); ctx.lineTo(c.width-20, h); ctx.stroke(); }
+
+    // Falling Ball
+    ctx.fillStyle = '#ef4444'; ctx.beginPath(); ctx.arc(c.width/2, fallY, 12, 0, Math.PI*2); ctx.fill();
+
+    if(fallY < 180){
+      document.getElementById('fallVal').textContent = `السرعة اللحظية: ${(fallV*3).toFixed(1)} m/s | التسارع ثابت (g = 9.8 m/s²)`;
+      fallAnim = requestAnimationFrame(animate);
+    } else {
+      document.getElementById('fallVal').textContent = `وصل الأرض! سرعة الاصطدام النهائية: ${(fallV*3).toFixed(1)} m/s`;
+    }
+  }
+  animate();
+}
+function resetFreeFall(){ cancelAnimationFrame(fallAnim); fallY = 30; fallV = 0; startFreeFall(); }
+
+// 6. Chemical Reaction Simulation
+let chemParticles = [];
+function resetChem(){
+  chemParticles = [];
+  for(let i=0; i<20; i++){
+    chemParticles.push({
+      x: Math.random()*250 + 20,
+      y: Math.random()*150 + 20,
+      vx: (Math.random()-0.5)*3,
+      vy: (Math.random()-0.5)*3,
+      type: i < 10 ? 'A' : 'B'
+    });
+  }
+}
+function updateChemTemp(){ drawChem(); }
+function drawChem(){
+  let c = document.getElementById('chemCanvas'); if(!c) return;
+  let ctx = c.getContext('2d');
+  c.width = c.clientWidth; c.height = 220;
+  if(chemParticles.length === 0) resetChem();
+
+  let speedMultiplier = parseFloat(document.getElementById('tempRange').value) * 0.4;
+  ctx.clearRect(0,0,c.width,c.height);
+
+  for(let p of chemParticles){
+    p.x += p.vx * speedMultiplier;
+    p.y += p.vy * speedMultiplier;
+    if(p.x < 15 || p.x > c.width-15) p.vx *= -1;
+    if(p.y < 15 || p.y > c.height-15) p.vy *= -1;
+
+    ctx.fillStyle = p.type === 'A' ? '#38bdf8' : (p.type === 'B' ? '#ef4444' : '#a855f7');
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.type==='AB'?10:7, 0, Math.PI*2); ctx.fill();
+  }
+  requestAnimationFrame(drawChem);
+}
+
+// 7. Logic Gates Simulation
+function drawLogic(){
+  let c = document.getElementById('logicCanvas'); if(!c) return;
+  let ctx = c.getContext('2d');
+  c.width = c.clientWidth; c.height = 220;
+  ctx.clearRect(0,0,c.width,c.height);
+
+  let a = parseInt(document.getElementById('inA').value);
+  let b = parseInt(document.getElementById('inB').value);
+  let gate = document.getElementById('gateType').value;
+
+  let out = 0;
+  if(gate === 'AND') out = (a && b) ? 1 : 0;
+  else if(gate === 'OR') out = (a || b) ? 1 : 0;
+  else if(gate === 'XOR') out = (a !== b) ? 1 : 0;
+
+  // Gate Box
+  ctx.fillStyle = '#1e293b'; ctx.fillRect(120, 60, 100, 100);
+  ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.strokeRect(120, 60, 100, 100);
+  ctx.fillStyle = '#ffffff'; ctx.font = '16px Tajawal'; ctx.fillText(gate, 150, 115);
+
+  // Lines
+  ctx.strokeStyle = a ? '#10b981' : '#64748b'; ctx.beginPath(); ctx.moveTo(40, 80); ctx.lineTo(120, 80); ctx.stroke();
+  ctx.strokeStyle = b ? '#10b981' : '#64748b'; ctx.beginPath(); ctx.moveTo(40, 140); ctx.lineTo(120, 140); ctx.stroke();
+  ctx.strokeStyle = out ? '#10b981' : '#ef4444'; ctx.beginPath(); ctx.moveTo(220, 110); ctx.lineTo(300, 110); ctx.stroke();
+
+  // Output Bulb
+  ctx.fillStyle = out ? '#f59e0b' : '#334155'; ctx.beginPath(); ctx.arc(315, 110, 15, 0, Math.PI*2); ctx.fill();
+
+  document.getElementById('logicVal').textContent = `المدخلات: A=${a}, B=${b} | البوابة: ${gate} | المخرج النهائي: ${out}`;
 }
 
 // Interactive Quiz Submit
@@ -807,16 +1060,14 @@ function submitQuiz(){
   }
 }
 
-// Window Load / Resize Triggers
+// Window Load / Init All Simulations
 window.onload = function(){
   drawTorque();
   drawMath();
   drawCell();
-};
-window.onresize = function(){
-  drawTorque();
-  drawMath();
-  drawCell();
+  drawLogic();
+  resetChem();
+  drawChem();
 };
 </script>
 </body>
