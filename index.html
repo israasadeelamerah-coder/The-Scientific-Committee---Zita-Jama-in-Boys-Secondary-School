@@ -1,93 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اللجنة العلمية | ذكور زيتا جماعين الثانوية - سلفيت</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<title>مختبر العلوم التفاعلي - زيتا جماعين</title>
 <style>
-*{box-sizing:border-box} body{margin:0;font-family:'Tajawal',Tahoma;background:#f8fafc;color:#0f172a;overflow-x:hidden}
-header{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1a936f 100%);color:white;padding:40px 20px 70px;text-align:center;position:relative;overflow:hidden}
-header::before{content:'⚛️ 🧪 🔬 📐 🧬';position:absolute;font-size:90px;opacity:0.07;top:-20px;left:0;right:0;letter-spacing:30px}
-.official{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);display:inline-block;padding:14px 24px;border-radius:16px;border:1px solid rgba(255,255,255,0.2);line-height:2;font-weight:700;font-size:15px}
-header h1{font-size:36px;margin:18px 0 6px;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
-header .motto{font-size:18px;opacity:0.9;background:linear-gradient(90deg,#fde68a,#f59e0b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
-nav{max-width:1100px;margin:-32px auto 0;background:white;border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,0.12);padding:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;position:relative;z-index:10}
-nav a{text-decoration:none;padding:10px 18px;border-radius:30px;font-weight:700;transition:0.3s;color:#334155;background:#f1f5f9}
-nav a.active,nav a:hover{background:#0f4c75;color:white;transform:translateY(-2px)}
-.hero{max-width:1100px;margin:30px auto;padding:0 16px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px}
-.card{background:white;border-radius:22px;box-shadow:0 8px 30px rgba(0,0,0,0.06);padding:24px;transition:0.3s;border:1px solid #f1f5f9;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.1)}
-.card::after{content:'';position:absolute;top:0;right:0;width:5px;height:100%}
-.c1::after{background:linear-gradient(#0f4c75,#38bdf8)} .c2::after{background:linear-gradient(#be185d,#f472b6)} .c3::after{background:linear-gradient(#15803d,#4ade80)} .c4::after{background:linear-gradient(#b45309,#fbbf24)}
-.icon{font-size:42px;margin-bottom:10px;display:block}
-.btn{display:inline-block;background:linear-gradient(135deg,#0f4c75,#1a936f);color:white;padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:800;margin-top:12px;box-shadow:0 6px 20px rgba(15,76,117,0.3)}
-.grid{max-width:1100px;margin:10px auto 40px;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.tag{font-size:12px;padding:5px 10px;border-radius:20px;font-weight:800;color:white;display:inline-block;margin-bottom:8px}
-.stats{display:flex;gap:20px;margin-top:18px} .stat{background:#f8fafc;padding:10px 14px;border-radius:12px;text-align:center;flex:1}
-footer{background:#020617;color:#94a3b8;text-align:center;padding:30px 20px;line-height:2;margin-top:20px}
-footer b{color:white}
-@media(max-width:850px){.hero{grid-template-columns:1fr} header h1{font-size:26px}}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f8fafc;margin:0;padding:0;color:#0f172a}
+.header{background:linear-gradient(135deg,#0f4c75,#1a936f);color:white;padding:28px 20px;text-align:center}
+.header h1{margin:0;font-size:26px}
+.header p{margin:8px 0 0;opacity:0.9;font-size:14px}
+.container{max-width:1100px;margin:20px auto;padding:0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px}
+.card{background:white;border-radius:18px;padding:18px;box-shadow:0 4px 18px rgba(0,0,0,0.06);transition:0.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.card h3{margin:10px 0 8px;font-size:18px}
+.icon{font-size:28px}
+.tag{font-size:11px;padding:4px 8px;border-radius:6px;color:white;font-weight:700;margin-right:6px}
+.c1{border-top:4px solid #0ea5e9}
+.c2{border-top:4px solid #ec4899}
+.c3{border-top:4px solid #22c55e}
+.c4{border-top:4px solid #f59e0b}
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:12px;margin-top:30px}
 </style>
 </head>
 <body>
-<header>
-<div class="official">وزارة التربية والتعليم العالي<br>مديرية التربية والتعليم - سلفيت<br>مدرسة ذكور زيتا جماعين الثانوية - اللجنة العلمية</div>
-<h1>🔬 موقع اللجنة العلمية الرسمي</h1>
-<div class="motto">From Observation to Experimentation • من الملاحظة إلى التجريب</div>
-</header>
 
-<nav>
-<a class="active" href="index.html">🏠 الرئيسية</a>
-<a href="#physics">⚙️ الفيزياء</a>
-<a href="#chemistry">🧪 الكيمياء</a>
-<a href="#biology">🔬 الأحياء</a>
-<a href="#math">📐 الرياضيات</a>
-<a href="torque.html">🧲 مختبر العزم</a>
-</nav>
+<div class="header">
+<h1>🔬 مختبر العلوم التفاعلي</h1>
+<p>ذكور زيتا جماعين الثانوية - مديرية سلفيت - فلسطين | إعداد اللجنة العلمية</p>
+</div>
 
-<div class="hero">
-<div class="card">
-<span class="tag" style="background:#0f4c75">WELCOME</span>
-<h2 style="margin:8px 0">مرحباً بكم في عالم العلوم التفاعلي ✨</h2>
-<p style="line-height:1.9;color:#475569">نحن في اللجنة العلمية في <b>ذكور زيتا جماعين الثانوية - سلفيت</b> نحول النظريات المعقدة إلى تجارب ممتعة ومباشرة. هدفنا أن يشعر الطالب أن الفيزياء والكيمياء ليست مواد حفظ، بل مغامرة يومية.</p>
-<div class="stats">
-<div class="stat"><b>4</b><br><span style="font-size:12px">مجالات علمية</span></div>
-<div class="stat"><b>∞</b><br><span style="font-size:12px">تجربة تفاعلية</span></div>
-<div class="stat"><b>100%</b><br><span style="font-size:12px">تعلم ممتع</span></div>
-</div>
-<a class="btn" href="torque.html">🚀 ادخل المختبر التفاعلي الآن</a>
-</div>
-<div class="card" style="background:linear-gradient(135deg,#f0f9ff,#ecfeff)">
-<h3>📍 بطاقة المدرسة</h3>
-<p style="line-height:2.1">
-<b>🏛️ الوزارة:</b> التربية والتعليم العالي<br>
+<div class="container">
+
+<div class="grid">
+
+<!-- 1. الفيزياء - مع تجربتك الجديدة -->
+<div class="card c1" id="physics">
+<span class="icon">⚙️</span><span class="tag" style="background:#0ea5e9">PHYSICS</span>
+<h3>الفيزياء - عالم القوة والحركة</h3>
+<p style="color:#475569;line-height:1.9;font-size:14px">
 <b>📍 المديرية:</b> مديرية سلفيت<br>
 <b>🏫 المدرسة:</b> ذكور زيتا جماعين الثانوية<br>
-<b>📚 اللجنة:</b> اللجنة العلمية<br>
+<b>🧪 اللجنة:</b> اللجنة العلمية<br>
 <b>🌍 الموقع:</b> زيتا جماعين - فلسطين
 </p>
-<div style="background:white;padding:10px;border-radius:12px;text-align:center;margin-top:10px">🧪 + ⚙️ + 🔬 + 📐 = 💡</div>
-</div>
-</div>
-<div style="background:linear-gradient(135deg,#e0f2fe,#f0fdfa);padding:14px;border-radius:14px;margin-top:12px;border:2px solid #0ea5e9;text-align:center">
-<div style="font-size:32px">🌀</div>
-<b style="font-size:15px">التجربة التفاعلية: الحركة الدائرية</b>
-<p style="font-size:12px;color:#475569;margin:6px 0 12px">اضغطي لتشغيل التجربة التفاعلية بملء الشاشة - إعداد اللجنة العلمية</p>
-<a href="https://maharammal.my.canva.site/circularmotion" target="_blank" style="background:linear-gradient(135deg,#0f4c75,#1a936f);color:white;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:800;display:inline-block;box-shadow:0 4px 12px rgba(15,76,117,0.3)">
+
+<!-- التجربة الجديدة - زر يفتح 100% -->
+<a href="https://maharammal.my.canva.site/circularmotion" target="_blank" style="text-decoration:none">
+<div style="background:linear-gradient(135deg,#e0f2fe,#f0fdfa);padding:16px;border-radius:14px;border:2px solid #0ea5e9;text-align:center;margin-top:14px">
+<div style="font-size:36px">🌀</div>
+<b style="font-size:15px;color:#0f4c75">التجربة التفاعلية: الحركة الدائرية</b>
+<p style="font-size:12px;color:#475569;margin:6px 0 12px">القوة المركزية والتسارع - إعداد اللجنة العلمية</p>
+<div style="background:linear-gradient(135deg,#0f4c75,#1a936f);color:white;padding:11px 22px;border-radius:10px;font-weight:800;display:inline-block">
 🚀 افتحي التجربة الآن
+</div>
+<p style="font-size:10px;color:#94a3b8;margin-top:8px">يفتح في صفحة جديدة بملء الشاشة</p>
+</div>
 </a>
 </div>
-<div class="card c2" id="chemistry"><span class="icon">🧪</span><span class="tag" style="background:#ec4899">CHEMISTRY</span><h3>الكيمياء - تفاعل الحياة</h3><p style="color:#64748b;line-height:1.8">شاهد التفاعلات الآمنة، الأحماض، القواعد، وكيف تتكون المواد من حولنا.</p></div>
-<div class="card c3" id="biology"><span class="icon">🧬</span><span class="tag" style="background:#22c55e">BIOLOGY</span><h3>الأحياء - سر الحياة</h3><p style="color:#64748b;line-height:1.8">رحلة داخل الخلية، جسم الإنسان، النباتات، والنظام البيئي.</p></div>
-<div class="card c4" id="math"><span class="icon">📐</span><span class="tag" style="background:#f59e0b">MATH</span><h3>الرياضيات - لغة الكون</h3><p style="color:#64748b;line-height:1.8">الجبر، الهندسة، التفاضل بطريقة بصرية تفاعلية تحببك في الأرقام.</p></div>
+
+<!-- 2. الكيمياء -->
+<div class="card c2" id="chemistry">
+<span class="icon">🧪</span><span class="tag" style="background:#ec4899">CHEMISTRY</span>
+<h3>الكيمياء - تفاعل الحياة</h3>
+<p style="color:#475569;line-height:1.9;font-size:14px">
+شاهد التفاعلات، الأحماض، القواعد، وكيف تتكون المواد من حولنا بطريقة آمنة وتفاعلية.
+</p>
+<div style="background:#fdf2f8;padding:12px;border-radius:10px;text-align:center;margin-top:12px;border:1px dashed #ec4899;color:#9d174d;font-size:13px">
+🧪 قريباً: تجارب الكيمياء التفاعلية
+</div>
 </div>
 
-<footer>
-<b>وزارة التربية والتعليم العالي - مديرية التربية والتعليم سلفيت</b><br>
-مدرسة ذكور زيتا جماعين الثانوية - اللجنة العلمية - بلدة زيتا جماعين<br>
-<span style="font-size:13px">تصميم وإعداد: معلمات اللجنة العلمية | 2026 © جميع الحقوق محفوظة</span>
-</footer>
+<!-- 3. الأحياء -->
+<div class="card c3" id="biology">
+<span class="icon">🧬</span><span class="tag" style="background:#22c55e">BIOLOGY</span>
+<h3>الأحياء - سر الحياة</h3>
+<p style="color:#475569;line-height:1.9;font-size:14px">
+رحلة داخل الخلية، جسم الإنسان، النباتات والنظام البيئي بطريقة بصرية ممتعة.
+</p>
+<div style="background:#f0fdf4;padding:12px;border-radius:10px;text-align:center;margin-top:12px;border:1px dashed #22c55e;color:#14532d;font-size:13px">
+🧬 قريباً: مختبر الأحياء
+</div>
+</div>
+
+<!-- 4. الرياضيات -->
+<div class="card c4" id="math">
+<span class="icon">📐</span><span class="tag" style="background:#f59e0b">MATH</span>
+<h3>الرياضيات - لغة الكون</h3>
+<p style="color:#475569;line-height:1.9;font-size:14px">
+المساحة، الهندسة، المنطق بطريقة بصرية تفاعلية تبسط الأرقام وتحبها للطلبة.
+</p>
+<div style="background:#fffbeb;padding:12px;border-radius:10px;text-align:center;margin-top:12px;border:1px dashed #f59e0b;color:#78350f;font-size:13px">
+📐 قريباً: ألعاب الرياضيات
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+© 2026 مختبر العلوم التفاعلي - ذكور زيتا جماعين الثانوية - إعداد اللجنة العلمية
+</div>
+
 </body>
 </html>
